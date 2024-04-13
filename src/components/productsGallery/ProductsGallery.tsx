@@ -1,15 +1,16 @@
 import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry'
 import { productsData } from '../../constants'
-import { Card } from '../../components'
+import { Card, Container } from '../../components'
 
 export default function ProductsGallery (): JSX.Element {
   return (
-    <article className='p-5'>
+    <Container>
       <ResponsiveMasonry columnsCountBreakPoints={{ 350: 1, 750: 2, 900: 3, 1024: 4, 1440: 5 }}>
         <Masonry gutter='1rem'>
           {
-            productsData.map(({ description, img, price, title }) => (
+            productsData.map(({ description, img, price, title }, index) => (
               <Card
+                key={index}
                 description={description}
                 img={img}
                 price={price}
@@ -19,6 +20,6 @@ export default function ProductsGallery (): JSX.Element {
           }
         </Masonry>
       </ResponsiveMasonry>
-    </article>
+    </Container>
   )
 }
