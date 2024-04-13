@@ -1,4 +1,3 @@
-
 interface CardProps {
   img: string
   description: string
@@ -8,10 +7,10 @@ interface CardProps {
 
 export default function Card ({ img, description, title, price }: CardProps): JSX.Element {
   return (
-    <article className='bg-slate-100 w-[240px] rounded-md'>
+    <article className='bg-slate-100 rounded-md overflow-hidden'>
       <section className='flex flex-col'>
         <figure>
-          <img src={img} alt={title} />
+          <img src={img} alt={title}/>
         </figure>
         <article className='px-4 py-3 flex flex-col gap-4'>
           <section>
