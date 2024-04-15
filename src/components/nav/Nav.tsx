@@ -1,5 +1,6 @@
 import { Link, NavLink, useLocation } from 'react-router-dom'
 import { FaCartShopping } from 'react-icons/fa6'
+import { GoHeartFill } from 'react-icons/go'
 import { FaStore } from 'react-icons/fa6'
 
 interface PathsTypes {
@@ -12,24 +13,25 @@ interface PathsTypes {
 export default function Nav () {
   const location = useLocation()
   const paths: PathsTypes[] = [
-    { id: 1, item: 'Products', to: '/', icon: <FaStore /> },
-    { id: 2, item: 'Cart', to: '/cart', icon: <FaCartShopping /> }
+    { id: 1, item: 'Products', to: '/', icon: <FaStore size={14}/> },
+    { id: 2, item: 'Cart', to: '/cart', icon: <FaCartShopping size={14}/> },
+    { id: 3, item: 'Favorites', to: '/favorites', icon: <GoHeartFill size={14} /> }
   ]
 
   return (
-    <nav className='h-20 w-full bg-[#111111]'>
+    <nav className='h-[70px] w-full bg-[#191919]/70 backdrop-blur-sm fixed top-0 right-0 left-0 z-10 rounded-b-2xl'>
       <section className='h-full w-[80%] mx-auto flex items-center justify-between'>
-        <article className='text-gray-400 flex items-center gap-3 space-y-2'>
+        <article className='text-gray-300 flex items-center gap-3 space-y-2'>
           <Link to='/' className='text-2xl'>
             Shopping-Cart
           </Link>
-          <p className=''>E-comerce</p>
+          <p className='hidden md:block'>E-comerce</p>
         </article>
         <ul className='flex gap-6 text-gray-400'>
           {paths.map(({ icon, id, item, to }) => (
             <li key={id}>
               <NavLink
-                className={`flex items-center gap-2 ${location.pathname === to ? 'text-orange-400' : ''
+                  className={`flex items-center gap-1.5 font-medium text-sm text-gray-300 ${location.pathname === to ? 'text-slate-50' : ''
                   }`}
                 to={to}
               >
