@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { FaCartShopping } from 'react-icons/fa6'
 import { GoHeartFill } from 'react-icons/go'
+import Button from '../button/Button'
 
 interface CardProps {
   img: string
@@ -26,16 +27,13 @@ export default function Card ({ img, description, title, price }: CardProps): JS
             <span className='text-sm font-bold text-gray-800'>${price}</span>
           </section>
           <section className='flex justify-between gap-4'>
-            <button className='bg-[#191919] rounded-full py-2 font-medium text-sm text-gray-200 flex flex-1 items-center justify-center gap-3 hover:bg-gray-800 transition-all'>
-              Add Card <FaCartShopping size={14} />
-            </button>
-            <button onClick={addToFavorites} className='bg-[#191919] rounded-full px-2.5 py-2 font-medium text-sm hover:bg-gray-700 transition-all'>
-              <GoHeartFill
-                className='transition-colors'
-                color={`${favorite ? 'rgb(220, 38,38)' : 'rgb(229, 231, 235)'}`}
-                size={14}
-              />
-            </button>
+            <Button className='flex-1'>
+              <span>Add Card</span>
+              <FaCartShopping size={14} />
+            </Button>
+            <Button onClick={addToFavorites} className='px-2.5'>
+              <GoHeartFill className='transition-colors' color={`${favorite ? 'rgb(220, 38,38)' : 'rgb(229, 231, 235)'}`} size={14} />
+            </Button>
           </section>
         </article>
       </section>
