@@ -6,6 +6,8 @@ import Wrapper from './wrapper/Wrapper'
 import ProductsGallery from './productsGallery/ProductsGallery'
 import Button from './button/Button'
 import SliderItem from './sliderItem/SliderItem'
+import SliderCategory from './sliderCategory/SliderCategory'
+import SliderHero from './sliderHero/SliderHero'
 
 export {
   Card,
@@ -15,5 +17,7 @@ export {
   Wrapper,
   ProductsGallery,
   Button,
-  SliderItem
+  SliderHero,
+  SliderItem,
+  SliderCategory
 }
