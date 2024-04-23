@@ -1,7 +1,6 @@
 import { Link, NavLink, useLocation } from 'react-router-dom'
-import { FaCartShopping } from 'react-icons/fa6'
+import { FaCartShopping, FaStore } from 'react-icons/fa6'
 import { GoHeartFill } from 'react-icons/go'
-import { FaStore } from 'react-icons/fa6'
 
 interface PathsTypes {
   id: number
@@ -13,8 +12,8 @@ interface PathsTypes {
 export default function Nav () {
   const location = useLocation()
   const paths: PathsTypes[] = [
-    { id: 1, item: 'Products', to: '/', icon: <FaStore size={14}/> },
-    { id: 2, item: 'Cart', to: '/cart', icon: <FaCartShopping size={14}/> },
+    { id: 1, item: 'Products', to: '/', icon: <FaStore size={14} /> },
+    { id: 2, item: 'Cart', to: '/cart', icon: <FaCartShopping size={14} /> },
     { id: 3, item: 'Favorites', to: '/favorites', icon: <GoHeartFill size={14} /> }
   ]
 
@@ -27,7 +26,7 @@ export default function Nav () {
           </Link>
           <p className='hidden md:block'>E-comerce</p>
         </article>
-        <ul className='flex gap-6 text-gray-400'>
+        <ul className='md:flex gap-6 text-gray-400 hidden'>
           {paths.map(({ icon, id, item, to }) => (
             <li key={id}>
               <NavLink

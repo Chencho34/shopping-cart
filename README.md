@@ -38,3 +38,4 @@ export default {
 * [Tailwind-Merge](https://www.npmjs.com/package/tailwind-merge)
 * [React-Icons](https://react-icons.github.io/react-icons/)
 * [React-Responsive-Masonry](https://www.npmjs.com/package/react-responsive-masonry)
+* [React-Slick](https://react-slick.neostack.com/)
