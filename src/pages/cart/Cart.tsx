@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { addQuantity, removeProductFromCart, subtractQuantity } from '../../reducers/cart/cartSlice'
 import { FaCartShopping } from 'react-icons/fa6'
 
-interface cartProduct {
+interface CartProduct {
   id: number
   img: string
   title: string
@@ -13,9 +13,15 @@ interface cartProduct {
   total: number
 }
 
+interface cartState {
+  totalCount: number
+  productsList: CartProduct[]
+  subTotal: number
+}
+
 export default function Cart (): JSX.Element {
   const dispatch = useDispatch()
-  const { productsList, totalCount, subTotal } = useSelector((state) => state.cart)
+  const { productsList, totalCount, subTotal } = useSelector((state: { cart: cartState }) => state.cart)
   const handleRemoveFromCart = (productId: number) => dispatch(removeProductFromCart(productId)) 
   const handleAddQuantity = (productId: number) => dispatch(addQuantity(productId))
   const handleSubtractQuantity = (productId: number) => dispatch(subtractQuantity(productId))
@@ -28,7 +34,7 @@ export default function Cart (): JSX.Element {
           <article className='col-span-8 flex flex-col gap-6'>
             {
               totalCount > 0 ?
-               ( productsList.map(({img, title, price, id, quantity, total}: cartProduct) => (
+               ( productsList.map(({img, title, price, id, quantity, total}: CartProduct) => (
                   <article key={id} className='bg-slate-100/70 backdrop-blur-sm rounded-md overflow-hidden shadow-lg hover:shadow-xl transition-shadow ease-in-out    w-full'>
                   <section className='flex flex-row'>
                     <figure className='w-[120px] h-[120px] object-cover'>

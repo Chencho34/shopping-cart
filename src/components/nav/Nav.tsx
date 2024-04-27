@@ -1,8 +1,6 @@
 import { Link, NavLink, useLocation } from 'react-router-dom'
 import { FaCartShopping, FaStore } from 'react-icons/fa6'
 import { GoHeartFill } from 'react-icons/go'
-import { CgMenuRightAlt } from 'react-icons/cg'
-
 
 interface PathsTypes {
   id: number
