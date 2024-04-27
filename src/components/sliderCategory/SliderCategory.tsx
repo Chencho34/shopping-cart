@@ -51,15 +51,15 @@ export default function SliderCategory (): JSX.Element {
   }
 
   const sliderProducts = [
-    { category: 'Chocolate', img: 'images/ice-01.jpg'},
-    { category: 'Varquillos', img: 'images/ice-02.jpg'},
-    { category: 'Mas Chocolate', img: 'images/ice-03.jpg'},
-    { category: 'varquillos', img: 'images/ice-04.jpg'},
-    { category: 'Doblea sabor', img: 'images/ice-05.jpg'},
-    { category: 'Espolvoreados', img: 'images/ice-06.jpg'},
-    { category: 'Fresa', img: 'images/ice-07.jpg'},
-    { category: 'Creamas', img: 'images/ice-08.jpg'},
-    { category: 'Paletas', img: 'images/ice-09.jpg'}
+    { category: 'Chocolate', img: 'images/ice-01.webp'},
+    { category: 'Varquillos', img: 'images/ice-02.webp'},
+    { category: 'Mas Chocolate', img: 'images/ice-03.webp'},
+    { category: 'varquillos', img: 'images/ice-04.webp'},
+    { category: 'Doblea sabor', img: 'images/ice-05.webp'},
+    { category: 'Espolvoreados', img: 'images/ice-06.webp'},
+    { category: 'Fresa', img: 'images/ice-07.webp'},
+    { category: 'Creamas', img: 'images/ice-08.webp'},
+    { category: 'Paletas', img: 'images/ice-09.webp'}
   ]
 
   return (

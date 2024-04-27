@@ -18,13 +18,13 @@ export default function SliderHero () {
       title: 'Y&Y',
       subtitle: '¡Heladeria PetFriendly!',
       paragraph: 'No te pierdas nuestras helados. Productos con descuentos especiales solo para ti y tu peludo amigo.',
-      image: '/images/hero-01.jpg'
+      image: '/images/hero-01.webp'
     },
     {
       title: 'Y&Y',
       subtitle: '¡Heladeria PetFriendly!',
       paragraph: 'No te pierdas nuestras helados.',
-      image: '/images/hero-02.jpg',
+      image: '/images/hero-03.webp',
       buttons: [
         { btn: 'Order Now', link: '#' }
       ]
