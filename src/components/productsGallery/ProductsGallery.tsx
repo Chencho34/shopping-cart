@@ -9,7 +9,11 @@ export default function ProductsGallery (): JSX.Element {
 
   const handleAddProductToCart = (productId: number) => {
     const product = productsData.find((product) => product.id === productId)
-    dispatch(addProductToCart(product))
+    if (product) {
+      dispatch(addProductToCart(product))
+    } else {
+      console.error(`No se encontró ningún producto con el id ${productId}.`)
+    }
   }
 
   return (
