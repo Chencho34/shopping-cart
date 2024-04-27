@@ -7,7 +7,7 @@ import { useDispatch } from 'react-redux'
 export default function ProductsGallery (): JSX.Element {
   const dispatch = useDispatch()
 
-  const handleAddProductToCart = (productId) => {
+  const handleAddProductToCart = (productId: number) => {
     const product = productsData.find((product) => product.id === productId)
     dispatch(addProductToCart(product))
   }

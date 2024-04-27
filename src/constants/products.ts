@@ -14,8 +14,8 @@ export const productsData = [
     title: 'Laptop',
     description: 'Laptop ultradelgada con procesador Intel Core i7, 16GB de RAM y SSD de 512GB.',
     price: 1299.99,
-    quantity: 0,
-    total: 0
+    quantity: 1,
+    total: 1299.99
   },
   {
     id: 3,
@@ -23,8 +23,8 @@ export const productsData = [
     title: 'Smartwatch',
     description: 'Reloj inteligente con monitor de ritmo cardíaco, GPS integrado y resistencia al agua.',
     price: 199.99,
-    quantity: 0,
-    total: 0
+    quantity: 1,
+    total: 199.99
   },
   {
     id: 4,
@@ -32,8 +32,8 @@ export const productsData = [
     title: 'Auriculares inalámbricos',
     description: 'Auriculares Bluetooth con cancelación de ruido activa y batería de larga duración.',
     price: 149.99,
-    quantity: 0,
-    total: 0
+    quantity: 1,
+    total: 149.99
   },
   {
     id: 5,
@@ -41,24 +41,24 @@ export const productsData = [
     title: 'Auriculares inalámbricos',
     description: 'Auriculares Bluetooth con cancelación de ruido activa y batería de larga duración.',
     price: 149.99,
-    quantity: 0,
-    total: 0
+    quantity: 1,
+    total: 149.99
   },
   { id: 6,
     img: 'https://picsum.photos/1300/1200',
     title: 'Auriculares inalámbricos',
     description: 'Auriculares Bluetooth con cancelación de ruido activa y batería de larga duración.',
     price: 149.99,
-    quantity: 0,
-    total: 0
+    quantity: 1,
+    total: 149.99
   },
   { id: 7,
     img: 'https://picsum.photos/1100/1800',
     title: 'Auriculares inalámbricos',
     description: 'Auriculares Bluetooth con cancelación de ruido activa y batería de larga duración.',
     price: 149.99,
-    quantity: 0,
-    total: 0
+    quantity: 1,
+    total: 149.99
   },
   {
     id: 8,
@@ -66,8 +66,8 @@ export const productsData = [
     title: 'Auriculares inalámbricos',
     description: 'Auriculares Bluetooth con cancelación de ruido activa y batería de larga duración.',
     price: 149.99,
-    quantity: 0,
-    total: 0
+    quantity: 1,
+    total: 149.99
   },
   { 
     id: 9,
@@ -75,8 +75,8 @@ export const productsData = [
     title: 'Auriculares inalámbricos',
     description: 'Auriculares Bluetooth con cancelación de ruido activa y batería de larga duración.',
     price: 149.99,
-    quantity: 0,
-    total: 0
+    quantity: 1,
+    total: 149.99
   },
   { 
     id: 10,
@@ -84,8 +84,8 @@ export const productsData = [
     title: 'Auriculares inalámbricos',
     description: 'Auriculares Bluetooth con cancelación de ruido activa y batería de larga duración.',
     price: 149.99,
-    quantity: 0,
-    total: 0
+    quantity: 1,
+    total: 149.99
   },
   {
     id: 11,
@@ -93,7 +93,7 @@ export const productsData = [
     title: 'Auriculares inalámbricos',
     description: 'Auriculares Bluetooth con cancelación de ruido activa y batería de larga duración.',
     price: 149.99,
-    quantity: 0,
-    total: 0
+    quantity: 1,
+    total: 149.99
   }
 ]
