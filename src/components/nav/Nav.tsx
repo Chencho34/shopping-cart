@@ -25,7 +25,7 @@ export default function Nav () {
             <Link to='/' className='text-2xl hover:text-white'>Y&Y</Link>
             <p className='hidden md:block'>Pet-Friendly</p>
           </article>
-          <ul className='md:flex gap-6 text-gray-400 hidden'>
+          <ul className='flex gap-6 text-gray-400'>
             {
               paths.map(({ icon, id, item, to }) => (
                 <li key={id}>
