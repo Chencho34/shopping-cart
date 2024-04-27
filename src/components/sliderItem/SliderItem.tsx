@@ -13,7 +13,7 @@ interface SliderItemProps {
 
 export default function SliderItem ({ src, title, subtitle, paragraph, children, buttons }: SliderItemProps): JSX.Element {
   return (
-    <section className='h-[370px] w-full overflow-hidden relative rounded-b-xl flex items-end bg-center' style={{backgroundImage: `linear-gradient(to bottom, rgba(45, 43, 43, 0.624), rgba(35, 32, 32, 0.7)), url(${src})`}}>
+    <section className='h-[370px] w-full overflow-hidden relative rounded-b-xl flex items-end bg-center bg-contain' style={{backgroundImage: `linear-gradient(to bottom, rgba(45, 43, 43, 0.624), rgba(35, 32, 32, 0.7)), url(${src})`}}>
       <article className='h-[calc(100%-70px)] w-[80%] mx-auto flex flex-col justify-center items-center gap-4'>
         <section className='text-center px-6'>
           <h2 className='text-2xl sm:text-4xl font-semibold text-gray-200'>{title}</h2>

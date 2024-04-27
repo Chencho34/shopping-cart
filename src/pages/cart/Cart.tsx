@@ -21,7 +21,7 @@ export default function Cart (): JSX.Element {
   const handleSubtractQuantity = (productId: number) => dispatch(subtractQuantity(productId))
   
   return (
-    // <div className='bg-cyan-800 h-screen w-full bg-center bg-no-repeat fixed overflow-y-auto top-0 right-0 bottom-0 left-0 bg-cover bg-[url("https://fashionista.com/.image/t_share/MTM5NDU0OTMzODExMzQwNDUy/kl1_0420jpg.jpg")]' style={{background: ''}}>
+    <div className='bg-cyan-800 h-screen w-full bg-center bg-no-repeat fixed overflow-y-auto top-0 right-0 bottom-0 left-0 bg-cover bg-[url("/images/hero-02.jpg")]' style={{background: ''}}>
       <Container className='pt-24'>
         <h3 className='text-lg sm:text-3xl  text-[#191919] mb-10 tracking-wider'>Your Shopping Cart</h3>
         <section className='h-full grid grid-cols-12 gap-4'>
@@ -42,11 +42,11 @@ export default function Cart (): JSX.Element {
                       <span className='text-sm font-bold text-gray-800'>${price}</span>
                       <section className='flex flex-row items-center gap-2'>
                         <button>
-                          <MdAddCircle size={24} className='text-[#191919] hover:text-opacity-70' onClick={() => handleAddQuantity(id)} />
+                          <MdAddCircle size={24} className='text-[#bf3992] hover:text-opacity-70' onClick={() => handleAddQuantity(id)} />
                         </button>
                         <span className='text-sm font-bold text-gray-800'>{quantity}</span>
                         <button>
-                          <MdRemoveCircle size={24} className='text-[#191919] hover:text-opacity-70' onClick={() => handleSubtractQuantity(id)} />
+                          <MdRemoveCircle size={24} className='text-[#bf3992] hover:text-opacity-70' onClick={() => handleSubtractQuantity(id)} />
                         </button>
                       </section>
                       <span className='text-sm font-bold text-gray-800'>${total.toFixed(2)}</span>
@@ -68,7 +68,7 @@ export default function Cart (): JSX.Element {
             }
       
           </article>
-          <article className='h-min w-full col-span-4 bg-[#191919]/70 backdrop-blur-sm rounded-md p-4'>
+          <article className='h-min w-full col-span-4 bg-[#bf3992]/70 backdrop-blur-sm rounded-md p-4'>
             <section className='flex flex-col gap-6'>
               <h3 className='text-xl md:text-3xl text-gray-300 tracking-wider'>Cart Details</h3>
               <article className='space-y-2 px-4' >
@@ -84,6 +84,6 @@ export default function Cart (): JSX.Element {
           </article>
         </section>
       </Container>
-    // </div>
+    </div>
   )
 }

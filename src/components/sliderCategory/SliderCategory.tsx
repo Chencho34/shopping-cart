@@ -51,15 +51,15 @@ export default function SliderCategory (): JSX.Element {
   }
 
   const sliderProducts = [
-    { category: 'TV', img: 'https://picsum.photos/400/401'},
-    { category: 'Smartphones', img: 'https://picsum.photos/400/402'},
-    { category: 'Laptops', img: 'https://picsum.photos/400/403'},
-    { category: 'Tablets', img: 'https://picsum.photos/400/404'},
-    { category: 'Videogames', img: 'https://picsum.photos/400/405'},
-    { category: 'Airphones', img: 'https://picsum.photos/400/406'},
-    { category: 'Smartwatch', img: 'https://picsum.photos/400/407'},
-    { category: 'PC Components', img: 'https://picsum.photos/400/408'},
-    { category: 'Cameras', img: 'https://picsum.photos/400/409'}
+    { category: 'Chocolate', img: 'images/ice-01.jpg'},
+    { category: 'Varquillos', img: 'images/ice-02.jpg'},
+    { category: 'Mas Chocolate', img: 'images/ice-03.jpg'},
+    { category: 'varquillos', img: 'images/ice-04.jpg'},
+    { category: 'Doblea sabor', img: 'images/ice-05.jpg'},
+    { category: 'Espolvoreados', img: 'images/ice-06.jpg'},
+    { category: 'Fresa', img: 'images/ice-07.jpg'},
+    { category: 'Creamas', img: 'images/ice-08.jpg'},
+    { category: 'Paletas', img: 'images/ice-09.jpg'}
   ]
 
   return (
@@ -71,7 +71,7 @@ export default function SliderCategory (): JSX.Element {
                 <article key={index} className='h-[180px] w-[180px] px-0.5'>
                   <section className='h-full relative rounded-md overflow-hidden'>
                     <img src={img} alt='img' className='absolute top-0 right-0 bottom-0 left-0 h-full w-full hover:opacity-80 object-cover hover:scale-150 ease-in-out duration-300' />
-                    <p className=' text-gray-300 font-semibold absolute left-0 bottom-0 bg-[#191919]/70 backdrop-blur-sm w-full py-1.5 text-center text-sm'>{category}</p>
+                    <p className=' text-gray-300 font-semibold absolute left-0 bottom-0 bg-[#bf3992]/70 backdrop-blur-sm w-full py-1.5 text-center text-sm'>{category}</p>
                   </section>
                 </article>
               ))
