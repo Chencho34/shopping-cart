@@ -30,7 +30,7 @@ export default function Cart (): JSX.Element {
     <div className='bg-cyan-800 h-screen w-full bg-center bg-no-repeat fixed overflow-y-auto top-0 right-0 bottom-0 left-0 bg-cover bg-[url("/images/hero-02.jpg")]' style={{background: ''}}>
       <Container className='pt-24'>
         <h3 className='text-lg sm:text-3xl  text-[#191919] mb-10 tracking-wider'>Your Shopping Cart</h3>
-        <section className='h-full grid grid-cols-12 gap-4'>
+        <section className='h-full flex flex-col gap-4'>
           <article className='col-span-8 flex flex-col gap-6'>
             {
               totalCount > 0 ?
