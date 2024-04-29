@@ -14,6 +14,7 @@ export default function ProductsGallery (): JSX.Element {
 
   return (
     <Container>
+      <h1 className='text-lg sm:text-3xl font-semibold pb-8 text-[#191919]'>Ultimos Productos</h1>
       <ResponsiveMasonry columnsCountBreakPoints={{ 350: 1, 750: 2, 900: 3, 1024: 4, 1440: 5 }}>
         <Masonry gutter='1rem'>
           {
