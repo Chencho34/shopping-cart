@@ -22,17 +22,17 @@ export default function Nav () {
   return (
     <>
       <nav className='h-[70px] w-full bg-[#191919]/70 backdrop-blur-sm fixed top-0 right-0 left-0 z-10 rounded-b-2xl'>
-        <section className='h-full w-[80%] mx-auto flex items-center justify-between'>
+        <section className='h-full w-[90%] mx-auto flex items-center justify-between'>
           <article className='text-gray-300 flex items-center gap-3 space-y-2'>
-            <Link to='/' className='text-2xl hover:text-white'>Chencho</Link>
-            <p className='hidden md:block'>E-comerce</p>
+            <Link to='/' className='text-2xl hover:text-white tracking-widest'>Chencho</Link>
+            <p className='hidden md:block tracking-wider'>E-shopping</p>
           </article>
           <ul className='md:flex gap-6 text-gray-400 hidden'>
             {
               paths.map(({ icon, id, item, to }) => (
                 <li key={id}>
                   <NavLink
-                    className={`flex items-center gap-1.5 font-medium text-sm text-gray-300 ${
+                    className={`flex items-center gap-1.5 font-normal text-sm text-gray-300 ${
                       location.pathname === to ? 'text-slate-50' : ''
                     }`}
                     to={to}

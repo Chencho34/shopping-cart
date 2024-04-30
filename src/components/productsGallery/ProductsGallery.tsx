@@ -1,20 +1,34 @@
 import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry'
 import { productsData } from '../../constants'
 import { Card, Container } from '../../components'
-import { addProductToCart } from '../../reducers/cart/cartSlice'
-import { useDispatch } from 'react-redux'
+import { addProductToCart, removeProductFromCart } from '../../reducers/cart/cartSlice'
+import { useDispatch, useSelector } from 'react-redux'
+import { CartState } from '../../types'
 
 export default function ProductsGallery (): JSX.Element {
   const dispatch = useDispatch()
+  const { productsList } = useSelector((state: { cart: CartState }) => state.cart)
 
-  const handleAddProductToCart = (productId: number) => {
+  const handleAddProductToCartOrRemove = (productId: number) => {
     const product = productsData.find((product) => product.id === productId)
-    if (product) {
-      dispatch(addProductToCart(product))
+    if (!product) return 
+    
+    const isInCart = productsList.find((product) => product.id === productId)
+    if (isInCart) {
+      dispatch(removeProductFromCart(productId))
     } else {
-      console.error(`No se encontró ningún producto con el id ${productId}.`)
+      dispatch(addProductToCart(product))
     }
   }
+  
+  // const handleAddProductToCartOrRemove = (productId: number) => {
+  //   const product = productsData.find((product) => product.id === productId)
+  //   if (productsList.find((pdt: CartProduct) => pdt.id === productId)) {
+  //     dispatch(removeProductFromCart(productId))
+  //   } else {
+  //     dispatch(addProductToCart(product))
+  //   }
+  // }
 
   return (
     <Container>
@@ -23,7 +37,7 @@ export default function ProductsGallery (): JSX.Element {
           {
             productsData.map(({ description, img, price, title, id }, index) => (
               <Card
-                onClick={() => handleAddProductToCart(id)}
+                onClick={() => handleAddProductToCartOrRemove(id)}
                 key={index}
                 description={description}
                 img={img}
