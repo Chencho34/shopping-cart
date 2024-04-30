@@ -8,9 +8,10 @@ interface CardProps {
   description: string
   title: string
   price: number
+  onClick: () => void
 }
 
-export default function Card ({ img, description, title, price }: CardProps): JSX.Element {
+export default function Card ({ img, description, title, price, onClick }: CardProps): JSX.Element {
   const [favorite, setFavorite] = useState<boolean>(false)
   const addToFavorites = () => setFavorite(!favorite)
 
@@ -27,7 +28,7 @@ export default function Card ({ img, description, title, price }: CardProps): JS
             <span className='text-sm font-bold text-gray-800'>${price}</span>
           </section>
           <section className='flex justify-between gap-4'>
-            <Button className='flex-1'>
+            <Button className='flex-1' onClick={onClick}>
               <span>Add Card</span>
               <FaCartShopping size={14} />
             </Button>
