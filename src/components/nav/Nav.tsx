@@ -1,10 +1,10 @@
 import { Link, NavLink, useLocation } from 'react-router-dom'
 import { FaCartShopping, FaStore } from 'react-icons/fa6'
 import { GoHeartFill } from 'react-icons/go'
-import { CgMenuRightAlt } from 'react-icons/cg'
-import { UseSelector, useSelector } from 'react-redux'
+// import { CgMenuRightAlt } from 'react-icons/cg'
+import { useSelector } from 'react-redux'
 import { CartState } from '../../types'
-import Button from '../button/Button'
+// import Button from '../button/Button'
 
 interface PathsTypes {
   id: number
