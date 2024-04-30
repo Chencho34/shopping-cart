@@ -1,10 +1,8 @@
 import { Link, NavLink, useLocation } from 'react-router-dom'
 import { FaCartShopping, FaStore } from 'react-icons/fa6'
 import { GoHeartFill } from 'react-icons/go'
-// import { CgMenuRightAlt } from 'react-icons/cg'
 import { useSelector } from 'react-redux'
 import { CartState } from '../../types'
-// import Button from '../button/Button'
 
 interface PathsTypes {
   id: number
@@ -15,13 +13,13 @@ interface PathsTypes {
 }
 
 export default function Nav () {
+  const { totalCount } = useSelector((state: { cart: CartState}) => state.cart)
   const location = useLocation()
   const paths: PathsTypes[] = [
     { id: 1, item: 'Products', to: '/', icon: <FaStore size={14} /> },
     { id: 2, to: '/cart', item: '', count: true, icon: <FaCartShopping size={14} /> },
     { id: 3, to: '/favorites', icon: <GoHeartFill size={14} /> }
   ]
-  const { totalCount } = useSelector((state: { cart: CartState}) => state.cart)
 
   return (
     <>
