@@ -29,7 +29,7 @@ export default function Nav () {
             <Link to='/' className='text-2xl hover:text-white tracking-widest'>Chencho</Link>
             <p className='hidden md:block tracking-wider'>E-shopping</p>
           </article>
-          <ul className='md:flex gap-6 text-gray-400 hidden'>
+          <ul className='flex gap-6 text-gray-400 '>
             {
               paths.map(({ icon, id, item, to, count}) => (
                 <li key={id}>
