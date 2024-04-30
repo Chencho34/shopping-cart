@@ -2,11 +2,14 @@ import { Link, NavLink, useLocation } from 'react-router-dom'
 import { FaCartShopping, FaStore } from 'react-icons/fa6'
 import { GoHeartFill } from 'react-icons/go'
 import { CgMenuRightAlt } from 'react-icons/cg'
-
+import { UseSelector, useSelector } from 'react-redux'
+import { CartState } from '../../types'
+import Button from '../button/Button'
 
 interface PathsTypes {
   id: number
-  item: string
+  item?: string
+  count?: true
   to: string
   icon: JSX.Element
 }
@@ -15,9 +18,10 @@ export default function Nav () {
   const location = useLocation()
   const paths: PathsTypes[] = [
     { id: 1, item: 'Products', to: '/', icon: <FaStore size={14} /> },
-    { id: 2, item: 'Cart', to: '/cart', icon: <FaCartShopping size={14} /> },
-    { id: 3, item: 'Favorites', to: '/favorites', icon: <GoHeartFill size={14} /> }
+    { id: 2, to: '/cart', item: '', count: true, icon: <FaCartShopping size={14} /> },
+    { id: 3, to: '/favorites', icon: <GoHeartFill size={14} /> }
   ]
+  const { totalCount } = useSelector((state: { cart: CartState}) => state.cart)
 
   return (
     <>
@@ -29,16 +33,17 @@ export default function Nav () {
           </article>
           <ul className='md:flex gap-6 text-gray-400 hidden'>
             {
-              paths.map(({ icon, id, item, to }) => (
+              paths.map(({ icon, id, item, to, count}) => (
                 <li key={id}>
                   <NavLink
-                    className={`flex items-center gap-1.5 font-normal text-sm text-gray-300 ${
+                    className={`flex items-center h-full  gap-1.5 font-normal text-sm text-gray-300 ${
                       location.pathname === to ? 'text-slate-50' : ''
                     }`}
                     to={to}
                   >
                     {icon}
                     {item}
+                    { count && <span className='bg-[#191919] text-sm  px-1 rounded-full'>{totalCount}</span> }
                   </NavLink>
                 </li>
               ))
