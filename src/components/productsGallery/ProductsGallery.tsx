@@ -20,16 +20,6 @@ export default function ProductsGallery (): JSX.Element {
       dispatch(addProductToCart(product))
     }
   }
-  
-  // const handleAddProductToCartOrRemove = (productId: number) => {
-  //   const product = productsData.find((product) => product.id === productId)
-  //   if (productsList.find((pdt: CartProduct) => pdt.id === productId)) {
-  //     dispatch(removeProductFromCart(productId))
-  //   } else {
-  //     dispatch(addProductToCart(product))
-  //   }
-  // }
-
   return (
     <Container>
       <ResponsiveMasonry columnsCountBreakPoints={{ 350: 1, 750: 2, 900: 3, 1024: 4, 1440: 5 }}>
