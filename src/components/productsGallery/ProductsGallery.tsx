@@ -27,6 +27,7 @@ export default function ProductsGallery (): JSX.Element {
           {
             productsData.map(({ description, img, price, title, id }, index) => (
               <Card
+                id={id}
                 onClick={() => handleAddProductToCartOrRemove(id)}
                 key={index}
                 description={description}

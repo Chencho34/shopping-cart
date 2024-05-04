@@ -2,8 +2,10 @@ import { useState } from 'react'
 import { FaCartShopping } from 'react-icons/fa6'
 import { GoHeartFill } from 'react-icons/go'
 import Button from '../button/Button'
+import { Link } from 'react-router-dom'
 
 interface CardProps {
+  id: number
   img: string
   description: string
   title: string
@@ -11,7 +13,7 @@ interface CardProps {
   onClick: () => void
 }
 
-export default function Card ({ img, description, title, price, onClick }: CardProps): JSX.Element {
+export default function Card ({ id, img, description, title, price, onClick }: CardProps): JSX.Element {
   const [favorite, setFavorite] = useState<boolean>(false)
   const addToFavorites = () => setFavorite(!favorite)
 
@@ -23,7 +25,9 @@ export default function Card ({ img, description, title, price, onClick }: CardP
         </figure>
         <article className='px-4 py-3 flex flex-col gap-4'>
           <section>
-            <h6 className='text-xl font-semibold tracking-wider mb-4'>{title}</h6>
+            <Link to={`/product/:${id}`}>
+              <h6 className='text-xl font-semibold tracking-wider mb-4 hover:text-[#191919]/70'>{title}</h6>
+            </Link>
             <p className='text-sm tracking-wide font-semibold text-gray-800 mb-2'>{description}</p>
             <span className='text-sm font-bold text-gray-800'>${price}</span>
           </section>
