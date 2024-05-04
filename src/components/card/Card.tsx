@@ -29,7 +29,7 @@ export default function Card ({ img, description, title, price, onClick }: CardP
           </section>
           <section className='flex justify-between gap-4'>
             <Button className='flex-1' onClick={onClick}>
-              <span>Add Card</span>
+              <span>Add to Cart</span>
               <FaCartShopping size={14} />
             </Button>
             <Button onClick={addToFavorites} className='px-2.5'>

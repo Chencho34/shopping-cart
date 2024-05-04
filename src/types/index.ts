@@ -6,6 +6,7 @@ export interface CartProduct {
   quantity: number
   total: number
   description?: string
+  category?: string
 }
 
 export interface CartState {
