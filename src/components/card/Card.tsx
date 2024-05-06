@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import { FaCartShopping } from 'react-icons/fa6'
 import { GoHeartFill } from 'react-icons/go'
 import Button from '../button/Button'
@@ -10,13 +9,13 @@ interface CardProps {
   description: string
   title: string
   price: number
-  onClick: () => void
+  isFavorite: boolean
+  isInCart: boolean
+  addProductToCartOrRemove: () => void
+  addToFavoritesOrRemove?: () => void
 }
 
-export default function Card ({ id, img, description, title, price, onClick }: CardProps): JSX.Element {
-  const [favorite, setFavorite] = useState<boolean>(false)
-  const addToFavorites = () => setFavorite(!favorite)
-
+export default function Card ({ id, img, description, title, price, addProductToCartOrRemove, addToFavoritesOrRemove, isFavorite, isInCart }: CardProps): JSX.Element {
   return (
     <article className='bg-slate-100 rounded-md overflow-hidden shadow-lg'>
       <section className='flex flex-col'>
@@ -32,12 +31,16 @@ export default function Card ({ id, img, description, title, price, onClick }: C
             <span className='text-sm font-bold text-gray-800'>${price}</span>
           </section>
           <section className='flex justify-between gap-4'>
-            <Button className='flex-1' onClick={onClick}>
-              <span>Add to Cart</span>
+            <Button className='flex-1' onClick={addProductToCartOrRemove}>
+              { 
+                isInCart 
+                  ? <span>Remove from Cart</span> 
+                  : <span>Add to Cart</span>
+              }
               <FaCartShopping size={14} />
             </Button>
-            <Button onClick={addToFavorites} className='px-2.5'>
-              <GoHeartFill className='transition-colors' color={`${favorite ? 'rgb(220, 38,38)' : 'rgb(229, 231, 235)'}`} size={14} />
+            <Button className='px-2.5' onClick={addToFavoritesOrRemove}>
+              <GoHeartFill className='transition-colors' color={isFavorite ? 'rgb(232, 22, 22)' : 'rgb(229, 231, 235)'} size={14} />
             </Button>
           </section>
         </article>

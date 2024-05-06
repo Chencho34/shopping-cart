@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { addQuantity, removeProductFromCart, subtractQuantity, emptyCart } from '../../reducers/cart/cartSlice'
 import { FaCartShopping } from 'react-icons/fa6'
 import { CartProduct, CartState } from '../../types'
+import { Link } from 'react-router-dom'
 
 export default function Cart (): JSX.Element {
   const dispatch = useDispatch()
@@ -29,7 +30,9 @@ export default function Cart (): JSX.Element {
                       </figure>
                       <article className='px-3 md:px-6 py-3 flex flex-col md:flex-row items-start md:items-center justify-between w-full gap-4'>
                         <section className='md:w-44 w-full'>
-                          <h6 className='text-lg font-semibold tracking-wider'>{title}</h6>
+                          <Link to={`/product/:${id}`}>
+                            <h6 className='text-lg font-semibold tracking-wider'>{title}</h6>
+                          </Link>
                           <p className='text-sm tracking-wide font-semibold text-gray-800'>No. {id}</p>
                         </section>
                         <section className='w-full flex flex-wrap gap-0 md:gap-6 items-center justify-between'>
