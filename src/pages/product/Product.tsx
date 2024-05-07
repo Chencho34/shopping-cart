@@ -1,4 +1,4 @@
-import { Link, useParams } from 'react-router-dom'
+import { Link, useNavigate, useParams } from 'react-router-dom'
 import { Button, Container } from '../../components'
 import { productsData } from '../../constants'
 import { IoIosArrowBack } from 'react-icons/io'
@@ -9,9 +9,10 @@ import { useDispatch, useSelector } from 'react-redux'
 import { addProductToCart, addToFavorites, removeProductFromCart, removeToFavorites } from '../../reducers/cart/cartSlice'
 
 export default function Product (): JSX.Element {
+  const navigate = useNavigate()
   const dispatch = useDispatch()
   const { id } = useParams()
-  let currentId: number
+  let currentId: number | undefined
   
   if (id) {
     const idParts = id.split(':')
@@ -56,12 +57,12 @@ export default function Product (): JSX.Element {
   return (
     <Container className='pt-24'>
       <h1 className='text-2xl sm:text-3xl text-[#191919] tracking-wider'>Product Description</h1>
-      <section className='w-full flex flex-row gap-10 py-10'>
-        <figure className='h-[350px] w-[70%] overflow-hidden rounded-md'>
+      <section className='w-full flex flex-col  md:flex-row gap-10 py-10'>
+        <figure className='h-[350px] w-full md:w-[70%] overflow-hidden rounded-md'>
           <img src={currentProduct?.img} alt={currentProduct?.title} className='h-full w-full object-contain rounded-md' />
         </figure>
-        <article className='w-[30%] flex flex-col justify-between  p-4 relative'>
-          <Button className='absolute right-4 top-4 bg-transparent py-0 px-0' onClick={() => handleAddToFavoritesOrRemove(currentId)}>
+        <article className='w-full md:w-[30%] flex flex-col justify-between md:p-4 relative gap-6'>
+          <Button className='absolute right-2 top-0 md:right-4 md:top-4 bg-transparent py-0 px-0' onClick={() => handleAddToFavoritesOrRemove(currentProduct?.id)}>
             {
               isFavorite ? <GoHeartFill color='red' size={22} /> : <GoHeart color='#191919' size={22}/> 
             }
@@ -73,11 +74,11 @@ export default function Product (): JSX.Element {
           </section>
           <article className='w-full flex flex-col gap-6'>
             <h5 className='text-xl font-semibold tracking-wider'>Select Option</h5>
-            <section className='flex flex-row gap-6'>
+            <section className='flex  flex-row  gap-6'>
               <Button className='w-full'>Buy</Button>
               <Button className='w-full bg-transparent border-[1px] border-[#191919] text-[#191919]'>Buy in Installments</Button>
             </section>
-            <Button className='flex' onClick={() => handleAddProductToCartOrRemove(currentId)}>
+            <Button className='flex' onClick={() => handleAddProductToCartOrRemove(currentProduct?.id)}>
               {
                 isInCart ? <span>Remove from Cart</span> : <span>Add to Cart</span>
               }
@@ -86,7 +87,13 @@ export default function Product (): JSX.Element {
           </article>
         </article>
       </section>
-      <Link to='/' className='h-full w-full'>
+      <Link 
+        to='/' 
+        onClick={(e) => {
+          e.preventDefault()
+          navigate(-1)
+        }} 
+        className='h-full w-full'>
         <Button className='px-4'>
           <IoIosArrowBack size={16} />
           Go Back 
