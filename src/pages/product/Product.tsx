@@ -23,7 +23,7 @@ export default function Product (): JSX.Element {
 
   const { favoritesList, productsList } = useSelector((state: { cart: CartState }) => state.cart)
 
-  const handleAddToFavoritesOrRemove = (productId: number) => {
+  const handleAddToFavoritesOrRemove = (productId: number | undefined) => {
     const product = productsData.find((product) => product.id === productId)
     if (!product) {
       // Manejar el caso en el que no se encuentra el producto
@@ -39,7 +39,7 @@ export default function Product (): JSX.Element {
     
   }
 
-  const handleAddProductToCartOrRemove = (productId: number) => {
+  const handleAddProductToCartOrRemove = (productId: number | undefined) => {
     const product = productsData.find((product) => product.id === productId)
     if (!product) return 
     

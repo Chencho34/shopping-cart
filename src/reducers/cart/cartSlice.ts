@@ -21,7 +21,7 @@ const cartSlice = createSlice({
         state.subTotal += action.payload.total
       }
     },
-    removeProductFromCart: (state, action: PayloadAction<number>) => {
+    removeProductFromCart: (state, action: PayloadAction<number | undefined>) => {
       const product = state.productsList.find(product => product.id === action.payload)
       if (product) {
         state.totalCount -= product.quantity
@@ -63,7 +63,7 @@ const cartSlice = createSlice({
         state.favoritesList = [...state.favoritesList, { ...action.payload, isFavorite: true }]
       }
     },
-    removeToFavorites: (state, action: PayloadAction<number>) => {
+    removeToFavorites: (state, action: PayloadAction<number | undefined>) => {
       state.favoritesList = state.favoritesList.filter(product => product.id !== action.payload)
       // Después de filtrar la lista, buscamos el producto eliminado y actualizamos su estado de isFavorite
       const productToRemove = state.favoritesList.find(product => product.id === action.payload)
