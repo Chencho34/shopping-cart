@@ -4,6 +4,8 @@ import { useDispatch, useSelector } from 'react-redux'
 import { addQuantity, removeProductFromCart, subtractQuantity, emptyCart } from '../../reducers/cart/cartSlice'
 import { FaCartShopping } from 'react-icons/fa6'
 import { CartProduct, CartState } from '../../types'
+import { Link } from 'react-router-dom'
+import { IoIosArrowBack } from 'react-icons/io'
 
 export default function Cart (): JSX.Element {
   const dispatch = useDispatch()
@@ -27,9 +29,11 @@ export default function Cart (): JSX.Element {
                       <figure className='md:w-[120px] w-full h-[120px] object-cover'>
                         <img loading='lazy' src={img} alt={title} className='h-full w-full object-cover' />
                       </figure>
-                      <article className='px-3 md:px-6 py-3 flex flex-col md:flex-row items-start md:items-center justify-between w-full gap-4'>
+                      <article className='px-3 md:px-6 py-4 flex flex-col md:flex-row items-start md:items-center justify-between w-full gap-4'>
                         <section className='md:w-44 w-full'>
-                          <h6 className='text-lg font-semibold tracking-wider'>{title}</h6>
+                          <Link to={`/product/:${id}`}>
+                            <h6 className='text-lg font-semibold tracking-wider hover:text-indigo-600'>{title}</h6>
+                          </Link>
                           <p className='text-sm tracking-wide font-semibold text-gray-800'>No. {id}</p>
                         </section>
                         <section className='w-full flex flex-wrap gap-0 md:gap-6 items-center justify-between'>
@@ -66,9 +70,12 @@ export default function Cart (): JSX.Element {
                 ))
               ) : (
                 <section className='h-full flex w-auto xl:py-0 py-16 justify-center items-center'>
-                  <section className='grid place-items-center'>
-                    <FaCartShopping size={24} color='#0706065e'/>
-                    <p className='text-xl text-[#0706065e]'>Empty Cart</p>
+                  <section className='grid place-items-center gap-6'>
+                    <article className='grid place-items-center'>
+                      <FaCartShopping size={24} color='#0706065e'/>
+                      <p className='text-xl text-[#0706065e]'>Empty Cart</p>
+                    </article>
+                    <Link to={'/'}><Button className='px-4' ><IoIosArrowBack size={16} />Continue Shopping</Button></Link>
                   </section>
                 </section>
               )

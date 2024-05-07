@@ -1,5 +1,5 @@
 import { createBrowserRouter, createRoutesFromElements, Route } from 'react-router-dom'
-import { Cart, Home } from '../pages'
+import { Cart, Home, Product } from '../pages'
 import { PublicLayout } from '../layout'
 
 export const router = createBrowserRouter(
@@ -7,5 +7,6 @@ export const router = createBrowserRouter(
     <Route path='/' element={<PublicLayout />}>
       <Route index element={<Home />} />
       <Route path='/cart' element={<Cart />} />
+      <Route path='/product/:id' element={<Product />} />
     </Route>
 ))
