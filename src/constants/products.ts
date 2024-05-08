@@ -1,4 +1,6 @@
-export const productsData = [
+import { CartProduct } from '../types'
+
+export const productsData: CartProduct[] = [
   { 
     id: 1,
     img: 'https://picsum.photos/2000/1000',
@@ -6,7 +8,10 @@ export const productsData = [
     description: 'Teléfono inteligente con pantalla OLED de 6.5 pulgadas, cámara de 12MP y 256GB de almacenamiento.',
     price: 799.99,
     quantity: 1,
-    total: 799.99
+    total: 799.99,
+    availability: true,
+    isFavorite: false,
+    isInCart: false
   },
   {
     id: 2,
@@ -15,7 +20,10 @@ export const productsData = [
     description: 'Laptop ultradelgada con procesador Intel Core i7, 16GB de RAM y SSD de 512GB.',
     price: 1299.99,
     quantity: 1,
-    total: 1299.99
+    total: 1299.99,
+    availability: true,
+    isFavorite: false,
+    isInCart: false  
   },
   {
     id: 3,
@@ -24,7 +32,10 @@ export const productsData = [
     description: 'Reloj inteligente con monitor de ritmo cardíaco, GPS integrado y resistencia al agua.',
     price: 199.99,
     quantity: 1,
-    total: 199.99
+    total: 199.99,
+    availability: true,
+    isFavorite: false,
+    isInCart: false
   },
   {
     id: 4,
@@ -33,7 +44,10 @@ export const productsData = [
     description: 'Auriculares Bluetooth con cancelación de ruido activa y batería de larga duración.',
     price: 149.99,
     quantity: 1,
-    total: 149.99
+    total: 149.99,
+    availability: true,
+    isFavorite: false,
+    isInCart: false
   },
   {
     id: 5,
@@ -42,7 +56,10 @@ export const productsData = [
     description: 'Auriculares Bluetooth con cancelación de ruido activa y batería de larga duración.',
     price: 149.99,
     quantity: 1,
-    total: 149.99
+    total: 149.99,
+    availability: true,
+    isFavorite: false,
+    isInCart: false
   },
   { id: 6,
     img: 'https://picsum.photos/1300/1200',
@@ -50,7 +67,10 @@ export const productsData = [
     description: 'Auriculares Bluetooth con cancelación de ruido activa y batería de larga duración.',
     price: 149.99,
     quantity: 1,
-    total: 149.99
+    total: 149.99,
+    availability: true,
+    isFavorite: false,
+    isInCart: false
   },
   { id: 7,
     img: 'https://picsum.photos/1100/1800',
@@ -58,7 +78,10 @@ export const productsData = [
     description: 'Auriculares Bluetooth con cancelación de ruido activa y batería de larga duración.',
     price: 149.99,
     quantity: 1,
-    total: 149.99
+    total: 149.99,
+    availability: true,
+    isFavorite: false,
+    isInCart: false
   },
   {
     id: 8,
@@ -67,7 +90,10 @@ export const productsData = [
     description: 'Auriculares Bluetooth con cancelación de ruido activa y batería de larga duración.',
     price: 149.99,
     quantity: 1,
-    total: 149.99
+    total: 149.99,
+    availability: true,
+    isFavorite: false,
+    isInCart: false
   },
   { 
     id: 9,
@@ -76,7 +102,10 @@ export const productsData = [
     description: 'Auriculares Bluetooth con cancelación de ruido activa y batería de larga duración.',
     price: 149.99,
     quantity: 1,
-    total: 149.99
+    total: 149.99,
+    availability: true,
+    isFavorite: false,
+    isInCart: false
   },
   { 
     id: 10,
@@ -85,7 +114,10 @@ export const productsData = [
     description: 'Auriculares Bluetooth con cancelación de ruido activa y batería de larga duración.',
     price: 149.99,
     quantity: 1,
-    total: 149.99
+    total: 149.99,
+    availability: true,
+    isFavorite: false,
+    isInCart: false
   },
   {
     id: 11,
@@ -94,6 +126,9 @@ export const productsData = [
     description: 'Auriculares Bluetooth con cancelación de ruido activa y batería de larga duración.',
     price: 149.99,
     quantity: 1,
-    total: 149.99
+    total: 149.99,
+    availability: true,
+    isFavorite: false,
+    isInCart: false
   }
 ]
