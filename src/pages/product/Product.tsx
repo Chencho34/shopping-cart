@@ -93,7 +93,8 @@ export default function Product (): JSX.Element {
       <h1 className='text-2xl sm:text-3xl text-purple-800 tracking-wider'>Descripccion</h1>
       <section className='w-full flex flex-col  md:flex-row gap-10 py-10'>
         <figure className='h-[350px] w-full md:w-[70%] overflow-hidden rounded-md'>
-          <img src={`/public/${product.img}`} alt={product.title}  className='h-full w-full object-contain rounded-md' />
+          <img src={`/${product.img}`} alt={product.title}  className='h-full w-full object-contain rounded-md' />
+          {/* <img src={product.img} alt={product.title}  className='h-full w-full object-contain rounded-md' /> */}
         </figure>
         <article className='w-full md:w-[30%] flex flex-col justify-between md:p-4 relative gap-6'>
           <Button className='absolute right-2 top-0 md:right-4 md:top-4 bg-transparent py-0 px-0' onClick={() => handleAddToFavoritesOrRemove(product.id)}>
