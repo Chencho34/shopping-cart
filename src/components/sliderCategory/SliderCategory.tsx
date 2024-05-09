@@ -42,7 +42,7 @@ export default function SliderCategory (): JSX.Element {
       {
         breakpoint: 480,
         settings: {
-          arrows: true,
+          // arrows: true,
           slidesToShow: 1,
           slidesToScroll: 1
         }
@@ -64,14 +64,14 @@ export default function SliderCategory (): JSX.Element {
 
   return (
       <Container className='space-y-6'>
-          <h3 className='text-lg sm:text-3xl font-semibold text-[#191919]'>Descubre nuestros nuevos productos</h3>
+          <h3 className='text-lg sm:text-3xl font-semibold text-purple-700'>Descubre nuestros nuevos productos</h3>
           <Slider {...settings}>
             {
               sliderProducts.map(({ category, img }, index) => (
                 <article key={index} className='h-[180px] w-[180px] px-0.5'>
                   <section className='h-full relative rounded-md overflow-hidden'>
                     <img src={img} alt='img' className='absolute top-0 right-0 bottom-0 left-0 h-full w-full hover:opacity-80 object-cover hover:scale-150 ease-in-out duration-300' />
-                    <p className=' text-gray-300 font-semibold absolute left-0 bottom-0 bg-[#bf3992]/70 backdrop-blur-sm w-full py-1.5 text-center text-sm'>{category}</p>
+                    <p className=' text-white font-semibold absolute left-0 bottom-0 bg-pink-500/70 backdrop-blur-sm w-full py-1.5 text-center text-sm'>{category}</p>
                   </section>
                 </article>
               ))

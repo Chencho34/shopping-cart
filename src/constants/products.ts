@@ -1,4 +1,6 @@
-export const productsData = [
+import { CartProduct } from '../types'
+
+export const productsData: CartProduct[] = [
   { 
     id: 1,
     img: 'images/ice-01.webp',
@@ -6,7 +8,10 @@ export const productsData = [
     description: '¡Haz que cada día sea una celebración con nuestro helado de Galleta Oreo en tu cono o tarrina favorita!',
     price: 30,
     quantity: 1,
-    total: 30
+    total: 30,
+    isFavorite: false,
+    isInCart: false,
+    availability: false
   },
   {
     id: 2,
@@ -15,7 +20,10 @@ export const productsData = [
     description: 'Refrescante y delicioso, nuestro helado de limon es la combinación perfecta de cremosidad. ¡Disfruta de un clásico reinventado en cada bocado!',
     price: 35,
     quantity: 1,
-    total: 35
+    total: 35,
+    isFavorite: false,
+    isInCart: false,
+    availability: false
   },
   {
     id: 3,
@@ -24,7 +32,10 @@ export const productsData = [
     description: '¡Un estallido de diversión en cada cucharada! Nuestro helado sabor chicle te lleva de vuelta a los días de juegos y risas. Déjate envolver por su dulzura y frescura en cada delicioso bocado.',
     price: 40,
     quantity: 1,
-    total: 40
+    total: 40,
+    isFavorite: false,
+    isInCart: false,
+    availability: false
   },
   {
     id: 4,
@@ -33,7 +44,10 @@ export const productsData = [
     description: 'Sumérgete en la exquisitez de la vainilla más cremosa y disfruta de un momento de pura indulgencia.',
     price: 50,
     quantity: 1,
-    total: 50
+    total: 50,
+    isFavorite: false,
+    isInCart: false,
+    availability: false
   },
   {
     id: 5,
@@ -42,7 +56,10 @@ export const productsData = [
     description: '¡Doble placer, doble indulgencia! Nuestro varquillo de dos bolas de chocolate es el sueño hecho realidad para los amantes del cacao.',
     price: 58,
     quantity: 1,
-    total: 58
+    total: 58,
+    isFavorite: false,
+    isInCart: false,
+    availability: false
   },
   { id: 6,
     img: 'images/ice-06.webp',
@@ -50,7 +67,10 @@ export const productsData = [
     description: 'A Sumérgete en una experiencia deliciosa y descubre tu nuevo sabor favorito en cada vaso.',
     price: 34,
     quantity: 1,
-    total: 34
+    total: 34,
+    isFavorite: false,
+    isInCart: false,
+    availability: false
   },
   { id: 7,
     img: 'images/ice-12.webp',
@@ -58,7 +78,10 @@ export const productsData = [
     description: ' Sumérgete en una experiencia deliciosa y descubre tu nuevo sabor favorito en cada vaso.',
     price: 70,
     quantity: 1,
-    total: 70
+    total: 70,
+    isFavorite: false,
+    isInCart: false,
+    availability: false
   },
   {
     id: 8,
@@ -67,7 +90,10 @@ export const productsData = [
     description: 'Seduce tus sentidos con nuestro helado de chocolate! Sumérgete en la indulgencia cremosa de cada cucharada',
     price: 60,
     quantity: 1,
-    total: 60
+    total: 60,
+    isFavorite: false,
+    isInCart: false,
+    availability: false
   },
   { 
     id: 9,
@@ -76,7 +102,10 @@ export const productsData = [
     description: 'Refresca tu día con nuestras irresistibles paletas de sabores! Desde la explosión frutal de la fresa hasta la exquisita dulzura del mango, cada paleta es un viaje de sabores vibrantes.',
     price: 33,
     quantity: 1,
-    total: 33
+    total: 33,
+    isFavorite: false,
+    isInCart: false,
+    availability: false
   },
   { 
     id: 10,
@@ -85,7 +114,10 @@ export const productsData = [
     description: 'Descubre nuestra increíble variedad de sabores! Desde clásicos como vainilla y fresa hasta innovaciones como chicle y galleta, tenemos algo para todos los gustos.',
     price: 50,
     quantity: 1,
-    total: 50
+    total: 50,
+    isFavorite: false,
+    isInCart: false,
+    availability: false
   },
   {
     id: 11,
@@ -94,6 +126,9 @@ export const productsData = [
     description: 'Viaja a los trópicos con nuestro helado de coco! Experimenta la suavidad cremosa y el exótico sabor del coco en cada deliciosa paleta.',
     price: 57,
     quantity: 1,
-    total: 57
+    total: 57,
+    isFavorite: false,
+    isInCart: false,
+    availability: false
   }
 ]

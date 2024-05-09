@@ -13,13 +13,13 @@ interface SliderItemProps {
 
 export default function SliderItem ({ src, title, subtitle, paragraph, children, buttons }: SliderItemProps): JSX.Element {
   return (
-    <section className='h-[370px] w-full overflow-hidden relative rounded-b-xl flex items-end bg-center bg-contain' style={{backgroundImage: `linear-gradient(to bottom, rgba(178, 13, 145, 0.70), rgba(152, 150, 150, 0.7)), url(${src})`}}>
+    <section className='h-[370px] w-full overflow-hidden relative rounded-b-xl flex items-end bg-center bg-contain' style={{backgroundImage: `linear-gradient(to bottom, rgba(236 72 153), rgba(236 72 153 / 0.8)), url(${src})`}}>
       <article className='h-[calc(100%-70px)] w-[80%] mx-auto flex flex-col justify-center items-center gap-4'>
         <section className='text-center px-6'>
-          <h2 className='text-2xl sm:text-4xl font-semibold text-gray-200'>{title}</h2>
-          <h3 className='text-xl sm:text-2xl font-medium text-gray-200'>{subtitle}</h3>
+          <h2 className='text-2xl sm:text-5xl font-semibold text-purple-700'>{title}</h2>
+          <h3 className='text-xl sm:text-3xl font-medium text-white'>{subtitle}</h3>
         </section>
-        <p className='text-sm sm:text-base text-gray-300 text-center px-4'>{paragraph}</p>
+        <p className='text-sm sm:text-base text-slate-100 text-center px-4'>{paragraph}</p>
         <section className='flex gap-6'>
           {
             buttons?.map(({ btn }, index) => (

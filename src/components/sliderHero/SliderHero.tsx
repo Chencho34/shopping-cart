@@ -26,7 +26,7 @@ export default function SliderHero () {
       paragraph: 'No te pierdas nuestras helados.',
       image: '/images/hero-03.webp',
       buttons: [
-        { btn: 'Order Now', link: '#' }
+        { btn: 'Ordena Ahora', link: '#' }
       ]
     }
   ]
