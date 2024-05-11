@@ -8,6 +8,8 @@ import Button from './button/Button'
 import SliderItem from './sliderItem/SliderItem'
 import SliderCategory from './sliderCategory/SliderCategory'
 import SliderHero from './sliderHero/SliderHero'
+import FavoritesGallery from './favoritesGallery/FavoritesGallery'
+import CardProductFavorite from './cardProductFavorite/CardProductFavorite'
 
 export {
   Card,
@@ -19,5 +21,7 @@ export {
   Button,
   SliderHero,
   SliderItem,
-  SliderCategory
+  SliderCategory,
+  FavoritesGallery,
+  CardProductFavorite
 }
