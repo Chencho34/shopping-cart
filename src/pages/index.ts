@@ -1,3 +1,4 @@
+import About from './about/About'
 import Cart from './cart/Cart'
 import Favorites from './favorites/Favorites'
 import Home from './home/Home'
@@ -7,5 +8,6 @@ export {
   Cart,
   Home,
   Product,
-  Favorites
+  Favorites,
+  About
 }
