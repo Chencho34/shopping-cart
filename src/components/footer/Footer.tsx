@@ -24,31 +24,23 @@ export default function Footer () {
             <section className=''>
               <h4 className='text-xl text-white font-semibold mb-4 tracking-widest'>SERVICIOS</h4>
               <ul className='flex flex-col gap-1.5'>
-                <li className='text-sm text-gray-200 hover:opacity-70 tracking-wide w-max'><a href='#'>Servicio al cliente excepcional</a></li>
-                <li className='text-sm text-gray-200 hover:opacity-70 tracking-wide w-max'><a href='#'>Calidad garantizada</a></li>
-                <li className='text-sm text-gray-200 hover:opacity-70 tracking-wide w-max'><a href='#'>Personalizacion</a></li>
+                <li className='text-sm text-gray-200 tracking-wide w-max'>Servicio al cliente excepcional</li>
+                <li className='text-sm text-gray-200 tracking-wide w-max'>Calidad garantizada</li>
+                <li className='text-sm text-gray-200 tracking-wide w-max'>Personalizacion</li>
               </ul>
             </section>
             <section>
-              <h4 className='text-lg text-white font-semibold mb-4 tracking-widest'>AYUDA</h4>
-              <ul className='flex flex-col gap-1.5'>
-                <li className='text-sm text-gray-200 hover:opacity-70 tracking-wide w-max'><a href='#'>Preguntas frecuentes</a></li>
-                <li className='text-sm text-gray-200 hover:opacity-70 tracking-wide w-max'><a href='#'>Contacto</a></li>
-              </ul>
-            </section>
-            <section>
-              <h4 className='text-lg text-white font-semibold mb-4 tracking-widest'>COMPANIA</h4>
+              <h4 className='text-xl text-white font-semibold mb-4 tracking-widest'>COMPANIA</h4>
               <ul className='flex flex-col gap-1.5'>
                 <li className='text-sm text-gray-200 hover:opacity-70 tracking-wide w-max'><Link to='/about'>Acerca de nosotros</Link></li>
                 <li className='text-sm text-gray-200 hover:opacity-70 tracking-wide w-max'><Link to='/about'>Nuestro equipo</Link></li>
-                <li className='text-sm text-gray-200 hover:opacity-70 tracking-wide w-max'><Link to='/about'>Politicas de privacidad</Link></li>
               </ul>
             </section>
             <section>
-              <h4 className='text-lg text-white font-semibold mb-4 tracking-widest'>REDES</h4>
+              <h4 className='text-xl text-white font-semibold mb-4 tracking-widest'>REDES</h4>
               <ul className='flex flex-row gap-2'>
                 <li className='text-sm text-white hover:opacity-70'>
-                  <a href='https://www.instagram.com/heladeriay_y?igsh=MXEwdmRiZWU1dDFrdw%3D%3D' target='_BLANK'>
+                  <a href='https://www.instagram.com/heladeria06/' target='_BLANK'>
                     <IoLogoInstagram size={26}/>
                   </a>
                 </li>
@@ -58,7 +50,7 @@ export default function Footer () {
                   </a>
                 </li>
                 <li className='text-sm text-white hover:opacity-70'>
-                  <a href='#' target='_BLANK'>
+                  <a href='https://www.tiktok.com/@heladera.yy?_t=8mNW3A75yLu&_r=1' target='_BLANK'>
                     <IoLogoTiktok size={26}/>
                   </a>
                 </li>
@@ -70,7 +62,7 @@ export default function Footer () {
           <div className='h-[0.5px] bg-gray-300/20 my-7'/>
         </article>
         <article>
-          <p className='text-center tracking-wide text-gray-300 text-sm'>© Copyright 2024 <a href='#' className='hover:text-white'>Y&Y</a>. All Rights Reserved.</p>
+          <p className='text-center tracking-wide text-gray-300 text-sm'>© Copyright 2024 <a href='#' className='text-white'>Y&Y</a>. All Rights Reserved.</p>
         </article>
       </Container>
     </footer>

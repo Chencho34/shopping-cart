@@ -23,8 +23,8 @@ export default function Product (): JSX.Element {
   })
 
   // console.log(product)
-  const navigate = useNavigate()
   const dispatch = useDispatch()
+  const navigate = useNavigate()
   const { id } = useParams()
   let currentId: number | undefined
   
@@ -59,11 +59,7 @@ export default function Product (): JSX.Element {
 
   const handleAddToFavoritesOrRemove = (productId: number | undefined) => {
     const product = productsData.find((product) => product.id === productId)
-    if (!product) {
-      // Manejar el caso en el que no se encuentra el producto
-      console.error('No se encontró el producto con el ID proporcionado')
-      return
-    }
+    if (!product) return
     const isFavorite = favoritesList.find((product) => product.id === productId)
     if (isFavorite) {
       dispatch(removeToFavorites(productId))
@@ -76,7 +72,6 @@ export default function Product (): JSX.Element {
   const handleAddProductToCartOrRemove = (productId: number | undefined) => {
     const product = productsData.find((product) => product.id === productId)
     if (!product) return 
-    
     const isInCart = productsList.find((product) => product.id === productId)
     if (isInCart) {
       dispatch(removeProductFromCart(productId))

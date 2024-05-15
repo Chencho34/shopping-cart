@@ -11,7 +11,6 @@ export default function About () {
           <div className='grid gap-6 lg:grid-cols-[1fr_400px] lg:gap-12 xl:grid-cols-[1fr_500px]'>
             <img
               src='/logo.svg'
-              // src='/images/hero-03.webp'
               alt='Ice Cream'
               className='mx-auto aspect-square overflow-hidden rounded-xl object-cover sm:w-full lg:order-last'
               width='550'
@@ -19,7 +18,6 @@ export default function About () {
             />
             <div className='flex flex-col justify-center space-y-4'>
               <div className='space-y-2'>
-                {/* <img src='/logo.svg' alt='' className='w-44'/> */}
                 <h1 className='text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none'>Deliciosos Helados</h1>
                 <p className='max-w-[600px] text-gray-500 md:text-xl dark:text-gray-400'>
                   Deléitese con nuestro helado premium elaborado con los ingredientes más frescos y naturales.
@@ -34,7 +32,6 @@ export default function About () {
               </Link>
             </div>
           </div>
-
         </section>
         <section className='w-full py-12 md:py-24 lg:py-32'>
           <div className='grid gap-10 lg:grid-cols-2 lg:gap-20'>
@@ -211,7 +208,7 @@ export default function About () {
               </div>
               <div className='flex flex-col items-center justify-center space-y-2'>
                 <figure className='relative flex h-20 w-20 shrink-0 overflow-hidden rounded-full'>
-                  <img src='https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=1480&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' alt='' />
+                  <img src='/images/armando.jpeg' alt='' />
                 </figure>
                 <div className='text-center'>
                   <h3 className='text-lg font-semibold'>Armando Crescencio</h3>

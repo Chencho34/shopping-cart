@@ -26,7 +26,6 @@ export default function Nav (): JSX.Element {
       <nav className='h-[70px] w-full bg-pink-500/70 backdrop-blur-sm fixed top-0 right-0 left-0 z-10 rounded-b-2xl'>
         <section className='h-full w-[90%] mx-auto flex items-center justify-between'>
           <article className='text-white flex items-center gap-3 space-y-2 h-full'>
-            {/* <Link to='/' className='text-2xl hover:text-purple-700 tracking-widest'>Y&Y</Link> */}
             <Link to='/'>
               <img src='/logo.svg' alt='logo' className='h-[47px]' />
             </Link>
