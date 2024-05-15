@@ -18,14 +18,14 @@ export default function About () {
             />
             <div className='flex flex-col justify-center space-y-4'>
               <div className='space-y-2'>
-                <h1 className='text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none'>Deliciosos Helados</h1>
+                <h1 className='text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none text-purple-800'>Deliciosos Helados</h1>
                 <p className='max-w-[600px] text-gray-500 md:text-xl dark:text-gray-400'>
                   Deléitese con nuestro helado premium elaborado con los ingredientes más frescos y naturales.
                 </p>
               </div>
               <Link to='/'>
                 <Button
-                  className='bg-purple-700 px-8 text-sm font-medium text-gray-50'
+                  className='bg-transparent border  border-purple-800  px-8 text-sm font-medium text-purple-800'
                 >
                   Explora Ahora
                 </Button>
@@ -36,13 +36,13 @@ export default function About () {
         <section className='w-full py-12 md:py-24 lg:py-32'>
           <div className='grid gap-10 lg:grid-cols-2 lg:gap-20'>
             <div>
-              <h2 className='text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl'>Mision</h2>
+              <h2 className='text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-purple-800'>Mision</h2>
               <p className='mt-4 max-w-[600px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400'>
                 En nuestra empresa de helados, estamos comprometidos a utilizar ingredientes de origen local de la más alta calidad para elaborar sabores de helado deliciosos e innovadores que deleiten a nuestros clientes. Nuestra misión es redefinir la experiencia del helado superando los límites de los sabores y técnicas tradicionales.
               </p>
             </div>
             <div>
-              <h2 className='text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl'>Vision</h2>
+              <h2 className='text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-purple-800'>Vision</h2>
               <p className='mt-4 max-w-[600px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400'>
                 Nuestra visión es convertirnos en un líder en la industria del helado artesanal, conocido por nuestra creatividad, dedicación al oficio y compromiso de utilizar los mejores ingredientes. Nuestro objetivo es inspirar la pasión por el helado en nuestra comunidad y más allá, y superar continuamente los límites de lo que es posible en el mundo de los postres helados.
               </p>
@@ -52,7 +52,7 @@ export default function About () {
         <section className='w-full py-12 md:py-24 lg:py-32'>
           <div className='grid gap-10 sm:px-10 md:gap-16 md:grid-cols-2'>
             <div>
-              <h2 className='lg:leading-tighter text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl xl:text-[3.4rem] 2xl:text-[3.75rem]'>
+              <h2 className='text-purple-800 lg:leading-tighter text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl xl:text-[3.4rem] 2xl:text-[3.75rem]'>
                 Valores
               </h2>
               <ul className='mt-4  space-y-4 text-gray-500 dark:text-gray-400'>
@@ -96,7 +96,7 @@ export default function About () {
         </section>
         <section className='w-full py-12 md:py-24 lg:py-32'>
           <div className='space-y-4 text-center '>
-            <h2 className='text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl'>Lo que dicen nuestros clientes</h2>
+            <h2 className='text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-purple-800'>Lo que dicen nuestros clientes</h2>
             <p className='mx-auto max-w-[700px] text-gray-500 md:text-xl dark:text-gray-400 pb-6'>
               Escuche a nuestros clientes satisfechos hablar sobre nuestros deliciosos helados y paletas que disfrutaron.
             </p>
@@ -173,7 +173,7 @@ export default function About () {
         <section className='w-full py-12 md:py-24 lg:py-32'>
           <div className='container grid items-center justify-center gap-4 px-4 text-center md:px-6 lg:gap-10'>
             <div className='space-y-3'>
-              <h2 className='text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl'>Nuestro Equipo</h2>
+              <h2 className='text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-purple-800'>Nuestro Equipo</h2>
               <p className='mx-auto max-w-[700px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400'>
                 Las personas talentosas detrás de nuestro éxito.
               </p>
