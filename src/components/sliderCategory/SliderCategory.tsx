@@ -51,15 +51,14 @@ export default function SliderCategory (): JSX.Element {
   }
 
   const sliderProducts = [
-    { category: 'Chocolate', img: 'images/ice-01.webp'},
-    { category: 'Varquillos', img: 'images/ice-02.webp'},
-    { category: 'Mas Chocolate', img: 'images/ice-03.webp'},
-    { category: 'varquillos', img: 'images/ice-04.webp'},
-    { category: 'Doblea sabor', img: 'images/ice-05.webp'},
-    { category: 'Espolvoreados', img: 'images/ice-06.webp'},
-    { category: 'Fresa', img: 'images/ice-07.webp'},
-    { category: 'Creamas', img: 'images/ice-08.webp'},
-    { category: 'Paletas', img: 'images/ice-09.webp'}
+    { category: 'Mango con chile', img: 'images/mang-chile.webp'},
+    { category: 'Piña', img: 'images/piña.webp'},
+    { category: 'Limon', img: 'images/limon.webp'},
+    { category: 'Guanabana', img: 'images/guanabana.webp'},
+    { category: 'Mango', img: 'images/mango.webp'},
+    { category: 'Nanche', img: 'images/nanche.webp'},
+    { category: 'Huevo Kinder', img: 'images/helado-kinder.webp'},
+    { category: 'Nuez', img: 'images/helado-nuez.webp'}
   ]
 
   return (

@@ -18,7 +18,7 @@ export default function Cart (): JSX.Element {
   return (
     <div className='h-screen w-full bg-center bg-no-repeat fixed overflow-y-auto top-0 right-0 bottom-0 left-0 bg-cover bg-[url("/images/hero-01.webp")]'>
       <Container className='pt-24'>
-        <h3 className='text-2xl sm:text-3xl text-purple-700 mb-10 tracking-wider'>Tu Carrito de Helados</h3>
+        <h3 className='text-2xl sm:text-3xl text-purple-700 font-semibold mb-10 tracking-wider'>Tu Carrito de Helados</h3>
         <section className='h-full w-full flex justify-between flex-wrap gap-6'>
           <article className='flex flex-col flex-1 gap-6'>
             {
@@ -81,7 +81,7 @@ export default function Cart (): JSX.Element {
               )
             }
             {
-              productsList.length > 0 && <Button className='max-w-max px-6' onClick={handleEmptyCart}>Empty Cart</Button>
+              productsList.length > 0 && <Button className='max-w-max px-6' onClick={handleEmptyCart}>Vaciar Carrito</Button>
             }
           </article>
           <article className='h-min w-full xl:w-[370px] bg-pink-500/70 backdrop-blur-sm rounded-md p-4'>

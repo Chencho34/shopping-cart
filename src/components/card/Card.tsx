@@ -20,7 +20,7 @@ export default function Card ({ id, img, description, title, price, addProductTo
     <article className='bg-slate-100 rounded-md overflow-hidden shadow-lg'>
       <section className='flex flex-col'>
         <figure>
-          <img loading='lazy' src={img} alt={title} />
+          <img loading='lazy' src={img} alt={title} className='w-full'/>
         </figure>
         <article className='px-4 py-3 flex flex-col gap-4'>
           <section>

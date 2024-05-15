@@ -30,7 +30,7 @@ export default function Favorites (): JSX.Element {
       {/* <section className='flex gap-6'> */}
       {
         favoritesList.length > 0 ? (
-          <ResponsiveMasonry columnsCountBreakPoints={{ 350: 1, 750: 2, 900: 3, 1024: 4, 1440: 5 }}>
+          <ResponsiveMasonry >
             <Masonry gutter='1rem'>
             {
               favoritesList.map((product) => (
