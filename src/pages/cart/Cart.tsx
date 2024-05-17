@@ -8,6 +8,8 @@ import { Link } from 'react-router-dom'
 import { IoIosArrowBack } from 'react-icons/io'
 
 export default function Cart (): JSX.Element {
+  window.scrollTo(0, 0)
+
   const dispatch = useDispatch()
   const { productsList, totalCount, subTotal } = useSelector((state: { cart: CartState }) => state.cart)
   const handleRemoveFromCart = (productId: number) => dispatch(removeProductFromCart(productId)) 

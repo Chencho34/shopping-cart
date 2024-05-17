@@ -10,6 +10,8 @@ import { addProductToCart, addToFavorites, removeProductFromCart, removeToFavori
 import { useEffect, useState } from 'react'
 
 export default function Product (): JSX.Element {
+  window.scrollTo(0, 0)
+
   const [product, setProduct] = useState({
     id: 0,
     img: '',

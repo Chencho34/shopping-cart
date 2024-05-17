@@ -7,6 +7,8 @@ import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry'
 import { FaCartShopping } from 'react-icons/fa6'
 
 export default function Favorites (): JSX.Element {
+  window.scrollTo(0, 0)
+
   const { favoritesList } = useSelector((state: { cart: CartState }) => state.cart)
   const navigate = useNavigate()
   return (
