@@ -44,3 +44,24 @@ export interface CartState {
   favoritesList: CartProduct[]
   subTotal: number
 }
+
+export interface SliderItemsData {
+  title: string
+  subtitle: string
+  paragraph: string
+  image: string
+  buttons?: { 
+    btn: string, 
+    link: string 
+  }[]
+}
+
+export interface SliderItemsSettings {
+  dots: boolean
+  infinite: boolean
+  slidesToShow: number
+  slidesToScroll: number
+  autoplay: boolean
+  autoplaySpeed: number
+  arrows: boolean
+}
