@@ -10,6 +10,7 @@ import SliderCategory from './sliderCategory/SliderCategory'
 import SliderHero from './sliderHero/SliderHero'
 import FavoritesGallery from './favoritesGallery/FavoritesGallery'
 import CardProductFavorite from './cardProductFavorite/CardProductFavorite'
+import Input from './input/Input'
 
 export {
   Card,
@@ -23,5 +24,6 @@ export {
   SliderItem,
   SliderCategory,
   FavoritesGallery,
-  CardProductFavorite
+  CardProductFavorite,
+  Input
 }
