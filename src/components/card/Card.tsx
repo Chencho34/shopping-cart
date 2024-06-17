@@ -25,8 +25,8 @@ export default function Card ({ id, img, description, title, price, addProductTo
         <article className='px-4 py-3 flex flex-col gap-4'>
           <section>
             <Link to={`/product/:${id}`}>
-              <p className='text-lg group relative w-max'>
-                <h6 className='text-xl font-semibold tracking-wider mb-4 hover:text-indigo-600'>{title}</h6>
+              <p className='group relative max-w-min inline-block mb-4'>
+                <h6 className='text-xl font-semibold tracking-wider hover:text-indigo-600'>{title}</h6>
                 <span className='absolute -bottom-1 left-0 w-0 transition-all h-0.5 bg-indigo-600 group-hover:w-full'></span>
               </p>
             </Link>
