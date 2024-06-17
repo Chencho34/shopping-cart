@@ -30,7 +30,7 @@ export default function Footer () {
               </ul>
             </section>
             <section>
-              <h4 className='text-lg text-white font-semibold mb-4 tracking-widest'>HELP</h4>
+              <h4 className='text-xl text-white font-semibold mb-4 tracking-widest'>HELP</h4>
               <ul className='flex flex-col gap-1.5'>
                 <li className='text-sm text-gray-300 hover:opacity-70 tracking-wide w-max'><a href='#'>Frequenlty Asked Questions</a></li>
                 <li className='text-sm text-gray-300 hover:opacity-70 tracking-wide w-max'><a href='#'>Size Guide</a></li>
@@ -40,7 +40,7 @@ export default function Footer () {
               </ul>
             </section>
             <section>
-              <h4 className='text-lg text-white font-semibold mb-4 tracking-widest'>COMPANY</h4>
+              <h4 className='text-xl text-white font-semibold mb-4 tracking-widest'>COMPANY</h4>
               <ul className='flex flex-col gap-1.5'>
                 <li className='text-sm text-gray-300 hover:opacity-70 tracking-wide w-max'><a href='#'>About Us</a></li>
                 <li className='text-sm text-gray-300 hover:opacity-70 tracking-wide w-max'><a href='#'>Our Team</a></li>
@@ -49,7 +49,7 @@ export default function Footer () {
               </ul>
             </section>
             <section>
-              <h4 className='text-lg text-white font-semibold mb-4 tracking-widest'>SOCIAL</h4>
+              <h4 className='text-xl text-white font-semibold mb-4 tracking-widest'>SOCIAL</h4>
               <ul className='flex flex-row gap-2'>
                 <li className='text-sm text-gray-300 hover:opacity-70'>
                   <a href='#'>
@@ -74,7 +74,7 @@ export default function Footer () {
           <div className='h-[0.5px] bg-gray-300/20 my-7'/>
         </article>
         <article>
-          <p className='text-center tracking-wide text-gray-500 text-sm'>© Copyright 2024 <a href='https://github.com/Chencho34' target='_BLANCK' className='hover:text-white'>Chencho34</a>. All Rights Reserved.</p>
+          <p className='text-center tracking-wide text-gray-500 text-sm'>© Copyright 2024 <a href='https://github.com/Chencho34' target='_BLANCK' className='hover:text-white text-gray-400'>Chencho34</a>. All Rights Reserved.</p>
         </article>
       </Container>
     </footer>
