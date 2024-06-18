@@ -27,7 +27,7 @@ export default function SignUp () {
         body: JSON.stringify(formData)
       })
 
-      const data = await response.json() // Aquí se lee el cuerpo de la respuesta una vez
+      const data = await response.json()
 
       if (!response.ok) {
         throw new Error(data.error || 'Error registering user')
