@@ -3,6 +3,10 @@ import { FaCartShopping, FaStore } from 'react-icons/fa6'
 import { GoHeartFill } from 'react-icons/go'
 import { useSelector } from 'react-redux'
 import { CartState } from '../../types'
+import Button from '../button/Button'
+import { FaUser } from 'react-icons/fa'
+import { useState } from 'react'
+
 
 interface PathsTypes {
   id: number
@@ -12,6 +16,8 @@ interface PathsTypes {
 }
 
 export default function Nav (): JSX.Element {
+  // todo ADD: FUNCTIONNAL NAV IF USER IS LOGED OR NOT WITH TOKEN USING REDUX
+  const [isLogin, setIsLogin] = useState(false)
   const { totalCount } = useSelector((state: { cart: CartState}) => state.cart)
   const location = useLocation()
   const paths: PathsTypes[] = [
@@ -28,24 +34,50 @@ export default function Nav (): JSX.Element {
             <Link to='/' className='text-2xl hover:text-white tracking-widest'>Chencho</Link>
             <p className='hidden md:block tracking-wider'>E-shopping</p>
           </article>
-          <ul className='flex gap-6 text-gray-400 '>
-            {
-              paths.map(({ icon, id, item, to }) => (
-                <li key={id}>
-                  <NavLink
-                    className={`flex items-center h-full  gap-1.5 font-normal text-sm text-gray-300 ${
-                      location.pathname === to ? 'text-slate-50' : ''
-                    }`}
-                    to={to}
-                  >
-                    {icon}
-                    {item}
-                    {to === '/cart' && <span className='bg-[#191919] text-sm  px-1 rounded-full'>{totalCount}</span>}
+          {
+            isLogin ? (
+              <article className='flex gap-12'>
+                <ul className='flex gap-6 text-gray-400'>
+                  {
+                    paths.map(({ icon, id, item, to }) => (
+                      <li key={id}>
+                        <NavLink
+                          className={`flex items-center h-full  gap-1.5 font-normal text-sm text-gray-300 ${
+                            location.pathname === to ? 'text-slate-50' : ''
+                          }`}
+                          to={to}
+                        >
+                          {icon}
+                          {item}
+                          {to === '/cart' && <span className='bg-[#191919] text-sm px-1 rounded-full'>{totalCount}</span>}
+                        </NavLink>
+                      </li>
+                    ))
+                  }
+                </ul>
+                <Link to='/' className='py-2 px-2 bg-[#212121] rounded-full'>
+                  <FaUser color='white' size={24}/>
+                </Link>
+              </article>
+            ) : (
+              <ul className='flex gap-4'>
+                <li>
+                  <NavLink to='/logindashboard'>
+                    <Button className='px-4 bg-transparent text-slate-50'>
+                      Login
+                    </Button>
                   </NavLink>
                 </li>
-              ))
-            }
-          </ul>
+                <li>
+                  <NavLink to='/logindashboard/signUp'>
+                    <Button className='px-4 bg-white text-[#1d1c1c] font-semibold'>
+                      SignUp
+                    </Button>
+                  </NavLink>
+                </li>
+              </ul>
+            )
+          }
         </section>
       </nav>
     </>
