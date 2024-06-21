@@ -1,9 +1,12 @@
 import { useState } from 'react'
-import { Button, Container, Input } from '../../components'
+import { Button, Container, Input, Spinner } from '../../components'
 import { Link, useNavigate } from 'react-router-dom'
 
 export default function SignUp () {
   const navigate = useNavigate()
+  const [isLoading, setIsLoading] = useState(false)
+  const [error, setError] = useState('')
+  const [success, setSuccess] = useState('')
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -18,6 +21,12 @@ export default function SignUp () {
   const handleRegister = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
 
+    if (isLoading) return
+
+    setIsLoading(true)
+    setError('')
+    setSuccess('')
+    
     try {
       const response = await fetch('http://localhost:3000/register', {
         method: 'POST',
@@ -33,9 +42,16 @@ export default function SignUp () {
         throw new Error(data.error || 'Error registering user')
       }
 
-      console.log('User registered successfully:', data)
-      navigate('/logindashboard')
+      // console.log('User registered successfully:', data)
+      setSuccess('User registered successfully')
+      
+      setTimeout(() => {
+        setIsLoading(false)
+        navigate('/logindashboard')
+      }, 1000)
     } catch (error) {
+      setError(error.message)
+      setIsLoading(false)
       console.error('Error logging in:', error)
     }
   }
@@ -43,10 +59,10 @@ export default function SignUp () {
   return (
     <div className='w-full h-auto bg-cover' style={{backgroundImage: 'linear-gradient(to bottom, rgba(45, 43, 43, 0.5), rgba(35, 32, 32, 0.7)), url("https://fashionista.com/.image/t_share/MTM5NDU0OTMzODExMzQwNDUy/kl1_0420jpg.jpg")' }}>
       <Container className='h-svh grid place-content-center'>
-        <section className=' bg-white/30 backdrop-blur-sm py-8 px-6 w-[300px] rounded-lg'>
+        <section className='py-8 px-6 w-[300px] rounded-lg bg-[#191919]/70 backdrop-blur-sm shadow-xl'>
           <article className='flex flex-col gap-9 mb-6'>
-            <h1 className='text-6xl text-center font-semibold tracking-wider'>SignUp</h1>
-            <p className='text-sm tracking-wider'>Please enter your details</p>
+            <h1 className='text-6xl text-center font-semibold tracking-wider text-gray-300'>SignUp</h1>
+            <p className='text-sm tracking-wider text-gray-300'>Please enter your details</p>
           </article>
           <form onSubmit={handleRegister} className='flex flex-col gap-6'>
             <section className='flex flex-col gap-2'>
@@ -81,8 +97,12 @@ export default function SignUp () {
                 />
               </label>
             </section>
-            <Button type='submit' className='px-4'>SignUp</Button>
-            <p className='text-xs'>Already have an account? <Link to='/logindashboard' className='font-semibold'>Login</Link></p>
+            <Button type='submit' className={`px-4 h-9 ${isLoading ? 'cursor-not-allowed' : ''}`}>
+              { isLoading ? <Spinner /> : <span>SignUp</span> }
+            </Button>
+            {error && <p className='text-red-500 text-xs'>{error}</p>}
+            {success && <p className='text-green-500 text-xs'>{success}</p>}
+            <p className='text-xs text-gray-300'>Already have an account? <Link to='/logindashboard' className='font-semibold'>Login</Link></p>
           </form>
         </section>
       </Container>

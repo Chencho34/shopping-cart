@@ -11,6 +11,7 @@ import SliderHero from './sliderHero/SliderHero'
 import FavoritesGallery from './favoritesGallery/FavoritesGallery'
 import CardProductFavorite from './cardProductFavorite/CardProductFavorite'
 import Input from './input/Input'
+import Spinner from './spinner/Spinner'
 
 export {
   Card,
@@ -25,5 +26,6 @@ export {
   SliderCategory,
   FavoritesGallery,
   CardProductFavorite,
-  Input
+  Input,
+  Spinner
 }
