@@ -1,11 +1,12 @@
-import { Link, NavLink, useLocation } from 'react-router-dom'
+import { Link, NavLink, useLocation, useNavigate } from 'react-router-dom'
 import { FaCartShopping, FaStore } from 'react-icons/fa6'
 import { GoHeartFill } from 'react-icons/go'
-import { useSelector } from 'react-redux'
-import { CartState } from '../../types'
+import { useDispatch, useSelector } from 'react-redux'
+import { AuthState, CartState } from '../../types'
 import Button from '../button/Button'
 import { FaUser } from 'react-icons/fa'
-import { useState } from 'react'
+import { logout } from '../../reducers/auth/authSlice'
+// import { useState } from 'react'
 
 
 interface PathsTypes {
@@ -16,8 +17,22 @@ interface PathsTypes {
 }
 
 export default function Nav (): JSX.Element {
+  const { isAuthenticated, user } = useSelector((state: { auth: AuthState }) => state.auth)
+  const dispatch = useDispatch()
+  const navigate = useNavigate()
+
+
+  console.log(isAuthenticated)
+  console.log(user)
+
+  const handleLogout = () => {
+    dispatch(logout())
+    localStorage.removeItem('token')
+    navigate('/login')
+  }
+
   // todo ADD: FUNCTIONNAL NAV IF USER IS LOGED OR NOT WITH TOKEN USING REDUX
-  const [isLogin, setIsLogin] = useState(false)
+  // const [isLogin, setIsLogin] = useState(false)
   const { totalCount } = useSelector((state: { cart: CartState}) => state.cart)
   const location = useLocation()
   const paths: PathsTypes[] = [
@@ -35,7 +50,7 @@ export default function Nav (): JSX.Element {
             <p className='hidden md:block tracking-wider'>E-shopping</p>
           </article>
           {
-            isLogin ? (
+            isAuthenticated ? (
               <article className='flex gap-12'>
                 <ul className='flex gap-6 text-gray-400'>
                   {
@@ -55,7 +70,7 @@ export default function Nav (): JSX.Element {
                     ))
                   }
                 </ul>
-                <Link to='/' className='py-2 px-2 bg-[#212121] rounded-full'>
+                <Link onClick={handleLogout} to='/' className='py-2 px-2 bg-[#212121] rounded-full'>
                   <FaUser color='white' size={24}/>
                 </Link>
               </article>

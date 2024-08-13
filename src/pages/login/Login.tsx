@@ -1,8 +1,11 @@
 import { useState } from 'react'
 import { Button, Container, Input, Spinner } from '../../components'
 import { Link, useNavigate } from 'react-router-dom'
+import { useDispatch } from 'react-redux'
+import { login } from '../../reducers/auth/authSlice'
 
 export default function Login (): JSX.Element {
+  const dispatch = useDispatch()
   const navigate = useNavigate()
   const [isLoading, setIsLoading] = useState(false)
   const [error, setError] = useState('')
@@ -39,6 +42,8 @@ export default function Login (): JSX.Element {
       
       const token = data.token
       localStorage.setItem('token', token)
+
+      dispatch(login(data.user))
   
       if (!response.ok) {
         throw new Error(data.error || 'Error logging in')

@@ -45,6 +45,11 @@ export interface CartState {
   subTotal: number
 }
 
+export interface AuthState {
+  isAuthenticated: false,
+  user: null
+}
+
 export interface SliderItemsData {
   title: string
   subtitle: string
