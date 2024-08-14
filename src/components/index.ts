@@ -12,6 +12,7 @@ import FavoritesGallery from './favoritesGallery/FavoritesGallery'
 import CardProductFavorite from './cardProductFavorite/CardProductFavorite'
 import Input from './input/Input'
 import Spinner from './spinner/Spinner'
+import ProtectedRoute from './protectedRoute/ProtectedRoute'
 
 export {
   Card,
@@ -27,5 +28,6 @@ export {
   FavoritesGallery,
   CardProductFavorite,
   Input,
-  Spinner
+  Spinner,
+  ProtectedRoute
 }
