@@ -1,6 +1,8 @@
 import { Outlet } from 'react-router-dom'
+import useAuth from '../../hooks/useAuth'
 
 export default function AuthLayout (): JSX.Element {
+  useAuth()
   return (
     <main className='flex h-full'>
       <aside className='w-[50%] bg-[#191919]  lg:block hidden'>
