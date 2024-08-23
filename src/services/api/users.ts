@@ -16,11 +16,11 @@ const deleteUserByName = async (name: string) => {
   const response = await fetch(`${API}/user/${name}`, {
     method: 'DELETE'
   })
-  const data = response.json()
+  const data = await response.json()
   return data
 }
 
-const registerUser = async (user: Object) => {
+const registerUser = async (user: object) => {
   const response = await fetch(`${API}/register`, {
     method: 'POST',
     headers: {
@@ -28,8 +28,10 @@ const registerUser = async (user: Object) => {
     },
     body: JSON.stringify(user)
   })
-
+  const data = await response.json() 
+  return data
 }
+
 export {
   getUsers,
   getUserByName,
