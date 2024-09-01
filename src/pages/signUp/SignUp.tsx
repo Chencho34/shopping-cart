@@ -1,17 +1,24 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Button, Container, Input, Spinner } from '../../components'
 import { Link, useNavigate } from 'react-router-dom'
+import useUsers from '../../hooks/useUsers'
 
 export default function SignUp () {
-  const navigate = useNavigate()
-  const [isLoading, setIsLoading] = useState(false)
-  const [error, setError] = useState('')
-  const [success, setSuccess] = useState('')
+  const { error, success, isLoading, signUpUser } = useUsers.useCreateUser()
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     password: ''
   })
+  const navigate = useNavigate()
+
+  useEffect(() => {
+    setTimeout(() => {
+      if (success) {
+        navigate('/logindashboard')
+      }
+    }, 1000)
+  }, [success])
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target
@@ -23,37 +30,7 @@ export default function SignUp () {
 
     if (isLoading) return
 
-    setIsLoading(true)
-    setError('')
-    setSuccess('')
-    
-    try {
-      const response = await fetch('http://localhost:3000/register', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(formData)
-      })
-
-      const data = await response.json()
-
-      if (!response.ok) {
-        throw new Error(data.error || 'Error registering user')
-      }
-
-      // console.log('User registered successfully:', data)
-      setSuccess('User registered successfully')
-      
-      setTimeout(() => {
-        setIsLoading(false)
-        navigate('/logindashboard')
-      }, 1000)
-    } catch (error) {
-      setError(error.message)
-      setIsLoading(false)
-      console.error('Error logging in:', error)
-    }
+    await signUpUser(formData)
   }
 
   return (

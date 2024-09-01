@@ -53,26 +53,21 @@ const useUserByName = (userName: string) => {
 }
 
 const useCreateUser = () => {
-  const [isLoading, setIsLoading] = useState(false)
-  const [error, setError] = useState(null)
-  const [success, setSuccess] = useState<string | null>('')
+  const [isLoading, setIsLoading] = useState<boolean>(false)
+  const [error, setError] = useState<string | null>(null)
+  const [success, setSuccess] = useState<string | null>(null)
   
   const signUpUser = async (user: object) => {
     try {
       setIsLoading(true)
       setSuccess(null)
       setError(null)
+
       const data = await registerUser(user)
 
-      if (data.error){
-        setError(data.error)
-        return
-      } 
-      
-      setSuccess('usuario creado correctamente')
-
+      setSuccess(data.message)  
     } catch (error) {
-      console.log(error)
+      setError(error.message)
     } finally {
       setIsLoading(false)
     }
@@ -81,8 +76,4 @@ const useCreateUser = () => {
   return { isLoading, error, success, signUpUser }
 }
 
-
-
-
 export default { useUsers, useUserByName, useCreateUser }
-
