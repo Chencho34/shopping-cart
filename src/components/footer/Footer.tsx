@@ -5,7 +5,7 @@ import Container from '../container/Container'
 
 export default function Footer () {
   return (
-    <footer className='w-full h-auto bg-cover' style={{backgroundImage: 'linear-gradient(to bottom, rgba(45, 43, 43, 0.7), rgba(35, 32, 32, 1)), url("https://fashionista.com/.image/t_share/MTM5NDU0OTMzODExMzQwNDUy/kl1_0420jpg.jpg")' }}>
+    <footer className='w-full h-auto bg-cover bg-[#191919]'>
       <Container>
         <h2 className='text-3xl font-semibold text-white mb-3 md:text-start text-center tracking-widest'>CHENCHO</h2>
         <article className='flex justify-between flex-wrap gap-6'>
@@ -52,17 +52,17 @@ export default function Footer () {
               <h4 className='text-xl text-white font-semibold mb-4 tracking-widest'>SOCIAL</h4>
               <ul className='flex flex-row gap-2'>
                 <li className='text-sm text-gray-300 hover:opacity-70'>
-                  <a href='#'>
+                  <a href='https://www.instagram.com/'>
                     <IoLogoInstagram size={26}/>
                   </a>
                 </li>
                 <li className='text-sm text-gray-300 hover:opacity-70'>
-                  <a href='#'>
+                  <a href='https://www.facebook.com/'>
                     <IoLogoFacebook size={26}/>
                   </a>
                 </li>
                 <li className='text-sm text-gray-300 hover:opacity-70'>
-                  <a href='#'>
+                  <a href='https://www.facebook.com/'>
                     <IoLogoWhatsapp size={26}/>
                   </a>
                 </li>
