@@ -1,22 +1,30 @@
 import { useEffect } from 'react'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { login } from '../reducers/auth/authSlice'
+import { AuthState } from '../types'
 
 export default function useAuth () {
   const dispatch = useDispatch()
+  const {  isAuthenticated } = useSelector((state: { auth: AuthState }) => state.auth)
+  console.log(isAuthenticated)
+  // console.log(user)
+  const user = {
+    email: 'joshua@gmail.com',
+    password: '12345678'
+  }
+
 
   useEffect(() => {
     const token = localStorage.getItem('token')
-    const user = {
-      name: 'joshua',
-      email: 'joshua@gmail.com',
-      id: 1
-    }
+
+    // todo install jwt decode
+    // const decodeUser = jwtDecode(token)
 
     if(token) {
-      // const response = await fetch('http://localhost:3000/user/')
       dispatch(login(user))
-    }
+    } 
+
+
 
     
   }, [dispatch])

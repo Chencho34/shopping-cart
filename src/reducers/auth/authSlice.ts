@@ -3,7 +3,8 @@ import { AuthState } from '../../types'
 
 const initialState: AuthState = {
   isAuthenticated: false,
-  user: null
+  user: null,
+  token: null
 }
 
 const authSlice = createSlice({
@@ -12,11 +13,13 @@ const authSlice = createSlice({
   reducers: {
     login: (state, action) => {
       state.isAuthenticated = true
-      state.user = action.payload // Aquí puedes guardar información del usuario
+      state.user = action.payload.user
+      state.user = action.payload.token
     },
     logout: (state) => {
       state.isAuthenticated = false
       state.user = null
+      state.token = null
     }
   }
 })

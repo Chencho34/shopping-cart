@@ -1,15 +1,14 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Button, Container, Input, Spinner } from '../../components'
 import { Link, useNavigate } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import { login } from '../../reducers/auth/authSlice'
+import useUsers from '../../hooks/useUsers'
 
 export default function Login (): JSX.Element {
   const dispatch = useDispatch()
   const navigate = useNavigate()
-  const [isLoading, setIsLoading] = useState(false)
-  const [error, setError] = useState('')
-  const [success, setSuccess] = useState('')
+  const { handleLogin, user, error, success, isLoading, token } = useUsers.useLoginUser()
   const [formData, setFormData] = useState({
     email: '',
     password: ''
@@ -20,48 +19,24 @@ export default function Login (): JSX.Element {
     setFormData({...formData, [name]: value})
   }
 
-  const handleLogin = async (e: React.FormEvent<HTMLFormElement>) => {
+  const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     
     if (isLoading) return
 
-    setIsLoading(true)
-    setError('')
-    setSuccess('')
-
-    try {
-      const response = await fetch('http://localhost:3000/login', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(formData)
-      })
-  
-      const data = await response.json()
-      
-      const token = data.token
-      localStorage.setItem('token', token)
-
-      dispatch(login(data.user))
-  
-      if (!response.ok) {
-        throw new Error(data.error || 'Error logging in')
-      }
-  
-      console.log('login succesfull', data)
-      setSuccess('user registered successfully')
-      
-      setTimeout(() => {
-        setIsLoading(false)
-        navigate('/')
-      }, 1000)
-    } catch (error) {
-      console.error('Error logging in:', error)
-      setError(error.message)
-      setIsLoading(false)
-    } 
+    await handleLogin(formData)
   }
+
+  useEffect(() => {
+    if (token) {
+      localStorage.setItem('token', token)
+      console.log('User logged in:', user)
+      dispatch(login(user))
+      navigate('/')
+    } else {
+      console.log('Login failed')
+    }
+  }, [token])
 
   return (
     <div className='w-full h-auto bg-cover' style={{backgroundImage: 'linear-gradient(to bottom, rgba(45, 43, 43, 0.5), rgba(35, 32, 32, 0.7)), url("https://fashionista.com/.image/t_share/MTM5NDU0OTMzODExMzQwNDUy/kl1_0420jpg.jpg")' }}>
@@ -71,7 +46,7 @@ export default function Login (): JSX.Element {
             <h1 className='text-6xl text-center font-semibold tracking-wider text-gray-300'>Login</h1>
             <p className='text-sm tracking-wider text-gray-300'>Log in to your account</p>
           </article>
-          <form onSubmit={handleLogin} className='flex flex-col gap-6'>
+          <form onSubmit={onSubmit} className='flex flex-col gap-6'>
             <section className='flex flex-col gap-2'>
               <label htmlFor='email'>
                 <Input

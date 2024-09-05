@@ -80,15 +80,27 @@ const registerUser = async (user: object) => {
 }
 
 const loginUser = async (user: object) => {
-  const response = await fetch(`${API}/login`, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify(user)
-  })
-  const data = await response.json() 
-  return data
+  try {
+    const response = await fetch(`${API}/login`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(user)
+    })
+
+    if(!response.ok) {
+      const errorData = await response.json()
+      throw new Error(errorData.error)
+    }
+    
+    const data = await response.json() 
+    return data
+    
+  } catch (error) {
+    console.error('Internal server errro', error)
+    throw error
+  }
 }
 
 export {

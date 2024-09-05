@@ -47,7 +47,8 @@ export interface CartState {
 
 export interface AuthState {
   isAuthenticated: false,
-  user: null
+  user: null,
+  token: null
 }
 
 export interface SliderItemsData {

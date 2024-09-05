@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { getUserByName, getUsers, registerUser } from '../services/api/users'
+import { getUserByName, getUsers, registerUser, loginUser } from '../services/api/users'
 
 const useUsers = () => {
   const [users, setUsers] = useState<[]>([])
@@ -76,4 +76,31 @@ const useCreateUser = () => {
   return { isLoading, error, success, signUpUser }
 }
 
-export default { useUsers, useUserByName, useCreateUser }
+const useLoginUser = () => {
+  const [isLoading, setIsLoading] = useState<boolean>(false)
+  const [error, setError] = useState<string | null>(null)
+  const [success, setSuccess] = useState<string | null>(null)
+  const [user, setUser] = useState<object| null>(null)
+  const [token, setToken] = useState<string | null>(null)
+
+  const handleLogin = async (credentials: object) => {
+    setIsLoading(true)
+    setSuccess(null)
+    setError(null)
+
+    try {
+      const data = await loginUser(credentials)
+      setUser(data.user)
+      setSuccess(data.message)
+      setToken(data.token)
+    } catch (error) {
+      setError(error.message)
+    } finally {
+      setIsLoading(false)
+    }
+  }
+
+  return { isLoading, error, success, user, token, handleLogin }
+}
+
+export default { useUsers, useUserByName, useCreateUser, useLoginUser }
