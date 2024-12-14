@@ -8,9 +8,5 @@ interface ProtectedRouteProps {
 
 export default function ProtectedRoute ({ children }: ProtectedRouteProps) {
   const isAuthenticated = useSelector((state: { auth: AuthState }) => state.auth.isAuthenticated)
-
-  if (!isAuthenticated) return <Navigate to={'/logindashboard'}/>
-
-  return children
+  return isAuthenticated ? children : <Navigate to={'/logindashboard'} />
 }
-

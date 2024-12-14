@@ -46,9 +46,19 @@ export interface CartState {
 }
 
 export interface AuthState {
-  isAuthenticated: false,
-  user: null,
-  token: null
+  isAuthenticated: boolean
+  user: {
+    name: string
+    email: string
+    password: string
+  } | null
+  token: string | null
+}
+
+export interface User {
+  name: string
+  email: string
+  password: string
 }
 
 export interface SliderItemsData {

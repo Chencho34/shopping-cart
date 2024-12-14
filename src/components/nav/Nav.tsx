@@ -6,8 +6,6 @@ import { AuthState, CartState } from '../../types'
 import Button from '../button/Button'
 import { FaUser } from 'react-icons/fa'
 import { logout } from '../../reducers/auth/authSlice'
-// import { useState } from 'react'
-
 
 interface PathsTypes {
   id: number
@@ -28,6 +26,7 @@ export default function Nav (): JSX.Element {
   const handleLogout = () => {
     dispatch(logout())
     localStorage.removeItem('token')
+    localStorage.removeItem('user')
     navigate('/login')
   }
 

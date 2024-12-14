@@ -1,4 +1,4 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 import { AuthState } from '../../types'
 
 const initialState: AuthState = {
@@ -9,15 +9,15 @@ const initialState: AuthState = {
 
 const authSlice = createSlice({
   name: 'auth',
-  initialState: initialState,
+  initialState,
   reducers: {
-    login: (state, action) => {
+    login: (state, action: PayloadAction<{ user: any | null; token: string }>) => {
       state.isAuthenticated = true
       state.user = action.payload.user
-      state.user = action.payload.token
+      state.token = action.payload.token
     },
     logout: (state) => {
-      state.isAuthenticated = false
+      state.isAuthenticated = false 
       state.user = null
       state.token = null
     }

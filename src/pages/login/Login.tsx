@@ -30,12 +30,10 @@ export default function Login (): JSX.Element {
   useEffect(() => {
     if (token) {
       localStorage.setItem('token', token)
-      console.log('User logged in:', user)
-      dispatch(login(user))
+      localStorage.setItem('user', JSON.stringify(user))
+      dispatch(login({user, token}))
       navigate('/')
-    } else {
-      console.log('Login failed')
-    }
+    } 
   }, [token])
 
   return (
