@@ -6,6 +6,7 @@ import { AuthState, CartState } from '../../types'
 import Button from '../button/Button'
 import { FaUser } from 'react-icons/fa'
 import { logout } from '../../reducers/auth/authSlice'
+import { useState } from 'react'
 
 interface PathsTypes {
   id: number
@@ -40,6 +41,16 @@ export default function Nav (): JSX.Element {
     { id: 3, item: '', to: '/favorites', icon: <GoHeartFill size={14} /> }
   ]
 
+  const userNavigation = [
+    { id: 1, item: 'Your profile', to: '/user-profile', icon: <FaStore size={14} /> },
+    { id: 2, item: 'Settings', to: '/user-settings', icon: <FaStore size={14} /> },
+    { id: 3, item: 'Log out', to: '/', icon: <FaStore size={14} /> }
+  ]
+
+  const [open, setOpen] = useState(false)
+
+  const handleOpen = () => setOpen(!open)
+
   return (
     <>
       <nav className='h-[70px] w-full bg-[#191919]/70 backdrop-blur-sm fixed top-0 right-0 left-0 z-10 rounded-b-2xl'>
@@ -69,9 +80,35 @@ export default function Nav (): JSX.Element {
                     ))
                   }
                 </ul>
-                <Link onClick={handleLogout} to='/' className='py-2 px-2 bg-[#212121] rounded-full'>
+                <Link 
+                  // onClick={handleLogout} 
+                  onClick={handleOpen}
+                  to='/' 
+                  className='py-2 px-2 bg-[#212121] rounded-full'
+                >
                   <FaUser color='white' size={24}/>
                 </Link>
+                {
+                  open && 
+                <section  className={`absolute py-4 px-3 w-[200px] h-auto bg-[#191919] backdrop-blur-sm top-[60px] sm:right-4 md:right-8 xl:right-16 rounded-2xl shadow-[black]/70 shadow-sm 
+                  transform transition-all  duration-300 ease-in-out ${open ? 'opacity-100 scale-100' : 'opacity-0 scale-90 pointer-events-none'}`}>
+                  <p className='px-2 text-lg text-gray-100 font-normal mb-2'>My Account</p>
+                  <ul className='flex flex-col'>
+                    {
+                      userNavigation.map(({id,item,to}) => (
+                        <li key={id} className=''>
+                          <NavLink 
+                            onClick={item === 'Log out' ? handleLogout : ''} 
+                            to={to} 
+                            className='flex items-center  gap-1.5 font-normal text-sm text-gray-300 px-2 py-1 hover:opacity-70 hover:bg-[#1c1b1b]/80 rounded-2xl'>
+                            {item}
+                          </NavLink>
+                        </li>
+                      ))
+                    }
+                  </ul>
+                </section>
+                }
               </article>
             ) : (
               <ul className='flex gap-4'>
