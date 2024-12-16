@@ -16,23 +16,17 @@ interface PathsTypes {
 }
 
 export default function Nav (): JSX.Element {
-  const { isAuthenticated, user } = useSelector((state: { auth: AuthState }) => state.auth)
+  const { isAuthenticated } = useSelector((state: { auth: AuthState }) => state.auth)
   const dispatch = useDispatch()
   const navigate = useNavigate()
-
-
-  console.log(isAuthenticated)
-  console.log(user)
 
   const handleLogout = () => {
     dispatch(logout())
     localStorage.removeItem('token')
     localStorage.removeItem('user')
-    navigate('/login')
+    navigate('/')
   }
 
-  // todo ADD: FUNCTIONNAL NAV IF USER IS LOGED OR NOT WITH TOKEN USING REDUX
-  // const [isLogin, setIsLogin] = useState(false)
   const { totalCount } = useSelector((state: { cart: CartState}) => state.cart)
   const location = useLocation()
   const paths: PathsTypes[] = [
@@ -80,14 +74,12 @@ export default function Nav (): JSX.Element {
                     ))
                   }
                 </ul>
-                <Link 
-                  // onClick={handleLogout} 
+                <button
                   onClick={handleOpen}
-                  to='/' 
                   className='py-2 px-2 bg-[#212121] rounded-full'
                 >
                   <FaUser color='white' size={24}/>
-                </Link>
+                </button>
                 {
                   open && 
                 <section  className={`absolute py-4 px-3 w-[200px] h-auto bg-[#191919] backdrop-blur-sm top-[60px] sm:right-4 md:right-8 xl:right-16 rounded-2xl shadow-[black]/70 shadow-sm 
@@ -96,13 +88,22 @@ export default function Nav (): JSX.Element {
                   <ul className='flex flex-col'>
                     {
                       userNavigation.map(({id,item,to}) => (
-                        <li key={id} className=''>
-                          <NavLink 
-                            onClick={item === 'Log out' ? handleLogout : ''} 
-                            to={to} 
-                            className='flex items-center  gap-1.5 font-normal text-sm text-gray-300 px-2 py-1 hover:opacity-70 hover:bg-[#1c1b1b]/80 rounded-2xl'>
-                            {item}
-                          </NavLink>
+                        <li key={id}>
+                          {
+                            item === 'Log out' ? (
+                              <button 
+                                onClick={handleLogout}
+                                className='flex items-center  gap-1.5 font-normal text-sm text-gray-200 px-2 py-1 hover:opacity-70 hover:bg-[#1c1b1b]/80 rounded-2xl w-full'>
+                                {item}
+                              </button>
+                            ) : (
+                              <NavLink 
+                                to={to} 
+                                className='flex items-center  gap-1.5 font-normal text-sm text-gray-300 px-2 py-1 hover:opacity-70 hover:bg-[#1c1b1b]/80 rounded-2xl'>
+                                {item}
+                              </NavLink>
+                            )
+                          }
                         </li>
                       ))
                     }
