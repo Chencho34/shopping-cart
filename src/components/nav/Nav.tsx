@@ -117,10 +117,9 @@ export default function Nav (): JSX.Element {
               <article className='flex sm:hidden cursor-pointer hover:text-white text-gray-300'>
                 <FaAlignRight size={24} onClick={handleOpenMenu} />
               </article>
-              <section  className={`sm:hidden absolute py-4 px-3 w-[200px] h-auto bg-[#191919] backdrop-blur-sm top-[60px] right-2 rounded-2xl shadow-[black]/70 shadow-sm 
-                  transform transition-all  duration-300 ease-in-out ${!openMenu ? 'opacity-100 scale-100' : 'opacity-0 scale-90 pointer-events-none'}`}>
-                  <p className='px-2 text-lg text-gray-100 font-normal mb-2'>My Account</p>
-                  <ul className='flex flex-col gap-1.5 text-gray-400'>
+              <section  className={`sm:hidden absolute py-4 px-3 w-[200px] h-auto bg-[#191919] backdrop-blur-sm top-[60px] right-2 rounded-2xl shadow-[black]/70 shadow-sm transform transition-all  duration-300 ease-in-out ${openMenu ? 'opacity-100 scale-100' : 'opacity-0 scale-90 pointer-events-none'}`}>
+                <p className='px-2 text-lg text-gray-100 font-normal mb-2'>My Account</p>
+                <ul className='flex flex-col gap-1.5 text-gray-400'>
                   {
                     paths.map(({ icon, id, item, to }) => (
                       <li key={id}>
@@ -129,6 +128,7 @@ export default function Nav (): JSX.Element {
                             location.pathname === to ? 'text-slate-50' : ''
                           }`}
                           to={to}
+                          onClick={handleOpenMenu}
                         >
                           {item}
                           {icon}
@@ -138,31 +138,33 @@ export default function Nav (): JSX.Element {
                     ))
                   }
                 </ul>
-                  <ul className='flex flex-col'>
-                    {
-                      userNavigation.map(({id,item,to}) => (
-                        <li key={id}>
-                          {
-                            item === 'Log out' ? (
-                              <button 
-                                onClick={handleLogout}
-                                className='flex items-center  gap-1.5 font-normal text-sm text-gray-200 px-2 py-1 hover:opacity-70 hover:bg-[#1c1b1b]/80 rounded-2xl w-full'>
-                                {item}
-                              </button>
-                            ) : (
-                              <NavLink 
-                                to={to} 
-                                className='flex items-center  gap-1.5 font-normal text-sm text-gray-300 px-2 py-1 hover:opacity-70 hover:bg-[#1c1b1b]/80 rounded-2xl'>
-                                {item}
-                              </NavLink>
-                            )
-                          }
-                        </li>
-                      ))
-                    }
-                  </ul>
-                </section>
-              </>
+                <ul className='flex flex-col'>
+                  {
+                    userNavigation.map(({id,item,to}) => (
+                      <li key={id}>
+                        {
+                          item === 'Log out' ? (
+                            <button 
+                              onClick={handleLogout}
+                              className='flex items-center  gap-1.5 font-normal text-sm text-gray-200 px-2 py-1 hover:opacity-70 hover:bg-[#1c1b1b]/80 rounded-2xl w-full'>
+                              {item}
+                            </button>
+                          ) : (
+                            <NavLink 
+                              to={to} 
+                              className='flex items-center  gap-1.5 font-normal text-sm text-gray-300 px-2 py-1 hover:opacity-70 hover:bg-[#1c1b1b]/80 rounded-2xl'
+                              onClick={handleOpenMenu}
+                            >
+                              {item}
+                            </NavLink>
+                          )
+                        }
+                      </li>
+                    ))
+                  }
+                </ul>
+              </section>
+            </>
              
             ) : (
               <ul className='flex gap-4'>
