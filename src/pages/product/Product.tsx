@@ -55,7 +55,7 @@ export default function Product (): JSX.Element {
   const isInCart = productsList.some((pro: CartProduct)  => pro.id === currentId)
 
   return (
-    <Container className='pt-24'>
+    <Container className='mx-auto pb-10 md:px-11 px-4 min-h-screen flex-grow w-full max-w-7xl sm:px-6 lg:px-8 pt-24'>
       <h1 className='text-2xl sm:text-3xl text-[#191919] tracking-wider'>Product Description</h1>
       <section className='w-full flex flex-col  md:flex-row gap-10 py-10'>
         <figure className='h-[350px] w-full md:w-[70%] overflow-hidden rounded-md'>

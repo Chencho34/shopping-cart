@@ -17,7 +17,7 @@ export default function Cart (): JSX.Element {
   
   return (
     // <div className='h-screen w-full bg-center bg-no-repeat fixed overflow-y-auto top-0 right-0 bottom-0 left-0 bg-cover bg-[url("https://fashionista.com/.image/t_share/MTM5NDU0OTMzODExMzQwNDUy/kl1_0420jpg.jpg")]'>
-      <Container className='pt-24'>
+      <Container className='mx-auto pb-10 md:px-11 px-4 min-h-screen flex-grow w-full max-w-7xl sm:px-6 lg:px-8 pt-24'>
         <h3 className='text-2xl sm:text-3xl text-[#191919] mb-10 tracking-wider'>Your Shopping Cart</h3>
         <section className='h-full w-full flex justify-between flex-wrap gap-6'>
           <article className='flex flex-col flex-1 gap-6'>
