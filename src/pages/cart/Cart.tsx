@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { addQuantity, removeProductFromCart, subtractQuantity, emptyCart } from '../../reducers/cart/cartSlice'
 import { FaCartShopping } from 'react-icons/fa6'
 import { CartProduct, CartState } from '../../types'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate} from 'react-router-dom'
 import { IoIosArrowBack } from 'react-icons/io'
 
 export default function Cart (): JSX.Element {
@@ -14,11 +14,21 @@ export default function Cart (): JSX.Element {
   const handleAddQuantity = (productId: number) => dispatch(addQuantity(productId))
   const handleSubtractQuantity = (productId: number) => dispatch(subtractQuantity(productId))
   const handleEmptyCart = () => dispatch(emptyCart())
+  const navigate = useNavigate()
   
   return (
     // <div className='h-screen w-full bg-center bg-no-repeat fixed overflow-y-auto top-0 right-0 bottom-0 left-0 bg-cover bg-[url("https://fashionista.com/.image/t_share/MTM5NDU0OTMzODExMzQwNDUy/kl1_0420jpg.jpg")]'>
       <Container className='mx-auto pb-10 md:px-11 px-4 min-h-screen flex-grow w-full max-w-7xl sm:px-6 lg:px-8 pt-24'>
-        <h3 className='text-2xl sm:text-3xl text-[#191919] mb-10 tracking-wider'>Your Shopping Cart</h3>
+        <Link
+          to='/' 
+          onClick={(e) => {
+            e.preventDefault()
+            navigate(-1)
+          }} 
+          className='h-full flex items-center gap-2 mb-16'>
+            <IoIosArrowBack size={30} />
+            <h3 className='text-2xl sm:text-3xl text-[#191919] tracking-wider'>Your Shopping Cart</h3>
+        </Link>
         <section className='h-full w-full flex justify-between flex-wrap gap-6'>
           <article className='flex flex-col flex-1 gap-6'>
             {

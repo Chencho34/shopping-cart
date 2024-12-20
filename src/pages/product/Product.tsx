@@ -76,9 +76,9 @@ export default function Product (): JSX.Element {
             <h5 className='text-xl font-semibold tracking-wider'>Select Option</h5>
             <section className='flex  flex-row  gap-6'>
               <Button className='w-full'>Buy</Button>
-              <Button className='w-full bg-transparent border-[1px] border-[#191919] text-[#191919]'>Buy in Installments</Button>
+              <Button className='w-full' variant='secondary'>Buy in Installments</Button>
             </section>
-            <Button className='flex' onClick={() => handleAddProductToCartOrRemove(currentProduct?.id)}>
+            <Button className='flex' variant='tertiary' onClick={() => handleAddProductToCartOrRemove(currentProduct?.id)}>
               {
                 isInCart ? <span>Remove from Cart</span> : <span>Add to Cart</span>
               }
