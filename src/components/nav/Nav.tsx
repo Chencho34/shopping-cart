@@ -79,7 +79,7 @@ export default function Nav (): JSX.Element {
                 </ul>
                 <button
                   onClick={handleOpen}
-                  className='py-2 px-2 bg-[#212121] hover:opacity- rounded-full'
+                  className='py-2 px-2 bg-[#212121] hover:opacity-70 rounded-full'
                 >
                   <FaUser color='white' size={24}/>
                 </button>
