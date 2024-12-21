@@ -25,10 +25,10 @@ export default function Card ({ id, img, description, title, price, addProductTo
         <article className='px-4 py-3 flex flex-col gap-4'>
           <section>
             <Link to={`/product/:${id}`}>
-              <p className='group relative max-w-min inline-block mb-4'>
-                <h6 className='text-xl font-semibold tracking-wider hover:text-indigo-600'>{title}</h6>
+              <h6 className='group relative max-w-min inline-block mb-4'>
+                <p className='text-xl font-semibold tracking-wider hover:text-indigo-600'>{title}</p>
                 <span className='absolute -bottom-1 left-0 w-0 transition-all h-0.5 bg-indigo-600 group-hover:w-full'></span>
-              </p>
+              </h6>
             </Link>
             <p className='text-sm tracking-wide font-semibold text-gray-800 mb-2'>{description}</p>
             <span className='text-sm font-bold text-gray-800'>${price}</span>
