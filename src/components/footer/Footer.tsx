@@ -2,9 +2,10 @@ import { IoLogoFacebook, IoLogoInstagram, IoLogoWhatsapp } from 'react-icons/io'
 import Button from '../button/Button'
 import Container from '../container/Container'
 
+
 export default function Footer () {
   return (
-    <footer className='bg-[#191919] w-full'>
+    <footer className='w-full h-auto bg-cover bg-[#191919]'>
       <Container>
         <h2 className='text-3xl font-semibold text-white mb-3 md:text-start text-center tracking-widest'>CHENCHO</h2>
         <article className='flex justify-between flex-wrap gap-6'>
@@ -12,12 +13,12 @@ export default function Footer () {
             <form>
               <label htmlFor='' className='flex flex-col w-full mb-4'>
                 <span  className='text-xl text-gray-300 tracking-wide'>STAY IN TOUCH</span>
-                <input type='text' id=''  placeholder='@chencho'  className='rounded-sm px-4 py-2 mt-2 focus:outline-none bg-gray-100 w-full' />
+                <input type='text' id=''  placeholder='@chencho'  className='rounded-full px-4 py-2 mt-2 focus:outline-none bg-gray-100 w-full' />
               </label>
-              <Button className='border-[1px] border-white px-6 text-white rounded-sm'>Submit</Button>
+              <Button className='border-[1px] border-white px-6 text-white rounded-full bg-transparent'>Submit</Button>
             </form>
           </section>
-          <article className='flex flex-wrap justify-between gap-10'>
+          <article className='flex flex-wrap justify-between items-start gap-10'>
             <section className=''>
               <h4 className='text-xl text-white font-semibold mb-4 tracking-widest'>SERVICES</h4>
               <ul className='flex flex-col gap-1.5'>
@@ -29,7 +30,7 @@ export default function Footer () {
               </ul>
             </section>
             <section>
-              <h4 className='text-lg text-white font-semibold mb-4 tracking-widest'>HELP</h4>
+              <h4 className='text-xl text-white font-semibold mb-4 tracking-widest'>HELP</h4>
               <ul className='flex flex-col gap-1.5'>
                 <li className='text-sm text-gray-300 hover:opacity-70 tracking-wide w-max'><a href='#'>Frequenlty Asked Questions</a></li>
                 <li className='text-sm text-gray-300 hover:opacity-70 tracking-wide w-max'><a href='#'>Size Guide</a></li>
@@ -38,31 +39,30 @@ export default function Footer () {
                 <li className='text-sm text-gray-300 hover:opacity-70 tracking-wide w-max'><a href='#'>Contact</a></li>
               </ul>
             </section>
-            {/* <section>
-              <h4 className='text-lg text-white font-semibold mb-4 tracking-widest'>COMPANY</h4>
+            <section>
+              <h4 className='text-xl text-white font-semibold mb-4 tracking-widest'>COMPANY</h4>
               <ul className='flex flex-col gap-1.5'>
                 <li className='text-sm text-gray-300 hover:opacity-70 tracking-wide w-max'><a href='#'>About Us</a></li>
                 <li className='text-sm text-gray-300 hover:opacity-70 tracking-wide w-max'><a href='#'>Our Team</a></li>
                 <li className='text-sm text-gray-300 hover:opacity-70 tracking-wide w-max'><a href='#'>Our Stores</a></li>
                 <li className='text-sm text-gray-300 hover:opacity-70 tracking-wide w-max'><a href='#'>Privacy Policy</a></li>
-                <li className='text-sm text-gray-300 hover:opacity-70 tracking-wide w-max'><a href='#'>News and Events</a></li>
               </ul>
-            </section> */}
+            </section>
             <section>
-              <h4 className='text-lg text-white font-semibold mb-4 tracking-widest'>SOCIAL</h4>
+              <h4 className='text-xl text-white font-semibold mb-4 tracking-widest'>SOCIAL</h4>
               <ul className='flex flex-row gap-2'>
                 <li className='text-sm text-gray-300 hover:opacity-70'>
-                  <a href='#'>
+                  <a href='https://www.instagram.com/'>
                     <IoLogoInstagram size={26}/>
                   </a>
                 </li>
                 <li className='text-sm text-gray-300 hover:opacity-70'>
-                  <a href='#'>
+                  <a href='https://www.facebook.com/'>
                     <IoLogoFacebook size={26}/>
                   </a>
                 </li>
                 <li className='text-sm text-gray-300 hover:opacity-70'>
-                  <a href='#'>
+                  <a href='https://www.facebook.com/'>
                     <IoLogoWhatsapp size={26}/>
                   </a>
                 </li>
@@ -74,7 +74,7 @@ export default function Footer () {
           <div className='h-[0.5px] bg-gray-300/20 my-7'/>
         </article>
         <article>
-          <p className='text-center tracking-wide text-gray-500 text-sm'>© Copyright 2024 <a href='https://github.com/Chencho34' target='_BLANCK' className='hover:text-white'>Chencho34</a>. All Rights Reserved.</p>
+          <p className='text-center tracking-wide text-gray-500 text-sm'>© Copyright 2024 <a href='https://github.com/Chencho34' target='_BLANCK' className='hover:text-white text-gray-400'>Chencho34</a>. All Rights Reserved.</p>
         </article>
       </Container>
     </footer>

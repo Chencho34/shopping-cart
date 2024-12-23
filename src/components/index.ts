@@ -10,6 +10,9 @@ import SliderCategory from './sliderCategory/SliderCategory'
 import SliderHero from './sliderHero/SliderHero'
 import FavoritesGallery from './favoritesGallery/FavoritesGallery'
 import CardProductFavorite from './cardProductFavorite/CardProductFavorite'
+import Input from './input/Input'
+import Spinner from './spinner/Spinner'
+import ProtectedRoute from './protectedRoute/ProtectedRoute'
 
 export {
   Card,
@@ -23,5 +26,8 @@ export {
   SliderItem,
   SliderCategory,
   FavoritesGallery,
-  CardProductFavorite
+  CardProductFavorite,
+  Input,
+  Spinner,
+  ProtectedRoute
 }

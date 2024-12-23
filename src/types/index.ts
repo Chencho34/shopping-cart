@@ -44,3 +44,40 @@ export interface CartState {
   favoritesList: CartProduct[]
   subTotal: number
 }
+
+export interface AuthState {
+  isAuthenticated: boolean
+  user: {
+    name: string
+    email: string
+    password: string
+  } | null
+  token: string | null
+}
+
+export interface User {
+  name: string
+  email: string
+  password: string
+}
+
+export interface SliderItemsData {
+  title: string
+  subtitle: string
+  paragraph: string
+  image: string
+  buttons?: { 
+    btn: string, 
+    link: string 
+  }[]
+}
+
+export interface SliderItemsSettings {
+  dots: boolean
+  infinite: boolean
+  slidesToShow: number
+  slidesToScroll: number
+  autoplay: boolean
+  autoplaySpeed: number
+  arrows: boolean
+}

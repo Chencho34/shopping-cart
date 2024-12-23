@@ -55,7 +55,7 @@ export default function Product (): JSX.Element {
   const isInCart = productsList.some((pro: CartProduct)  => pro.id === currentId)
 
   return (
-    <Container className='pt-24'>
+    <Container className='mx-auto pb-10 md:px-11 px-4 min-h-screen flex-grow w-full max-w-7xl sm:px-6 lg:px-8 pt-24'>
       <h1 className='text-2xl sm:text-3xl text-[#191919] tracking-wider'>Product Description</h1>
       <section className='w-full flex flex-col  md:flex-row gap-10 py-10'>
         <figure className='h-[350px] w-full md:w-[70%] overflow-hidden rounded-md'>
@@ -76,9 +76,9 @@ export default function Product (): JSX.Element {
             <h5 className='text-xl font-semibold tracking-wider'>Select Option</h5>
             <section className='flex  flex-row  gap-6'>
               <Button className='w-full'>Buy</Button>
-              <Button className='w-full bg-transparent border-[1px] border-[#191919] text-[#191919]'>Buy in Installments</Button>
+              <Button className='w-full' variant='secondary'>Buy in Installments</Button>
             </section>
-            <Button className='flex' onClick={() => handleAddProductToCartOrRemove(currentProduct?.id)}>
+            <Button className='flex' variant='tertiary' onClick={() => handleAddProductToCartOrRemove(currentProduct?.id)}>
               {
                 isInCart ? <span>Remove from Cart</span> : <span>Add to Cart</span>
               }

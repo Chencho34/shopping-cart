@@ -6,7 +6,7 @@ import { Link, useNavigate } from 'react-router-dom'
 export default function Favorites (): JSX.Element {
   const navigate = useNavigate()
   return (
-    <Container className='pt-24'>
+    <Container className='mx-auto pb-10 md:px-11 px-4 min-h-screen flex-grow w-full max-w-7xl sm:px-6 lg:px-8 pt-24'>
       <section className='flex'>
         <Link
           to='/' 
