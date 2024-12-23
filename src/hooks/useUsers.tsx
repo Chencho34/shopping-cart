@@ -8,13 +8,13 @@ const useUsers = () => {
 
   useEffect(() => {
     const fetchUsers = async () => {
-      
       try {
         setIsLoading(true)
         const data = await getUsers()
         setUsers(data)
       } catch (error) {
-        setError(error.message)
+        const errorMessage = error instanceof Error ? error.message : 'Unexpected error occurred'
+        setError(errorMessage)
       } finally {
         setIsLoading(false)
       }
@@ -40,7 +40,8 @@ const useUserByName = (userName: string) => {
         const data = await getUserByName(userName)
         setUser(data)
       } catch (error) {
-        setError(error.message)
+        const errorMessage = error instanceof Error ? error.message : 'Unexpected error occurred'
+        setError(errorMessage)
       } finally {
         setIsLoading(false)
       }
@@ -67,7 +68,8 @@ const useCreateUser = () => {
 
       setSuccess(data.message)  
     } catch (error) {
-      setError(error.message)
+      const errorMessage = error instanceof Error ? error.message : 'Unexpected error occurred'
+      setError(errorMessage)
     } finally {
       setIsLoading(false)
     }
@@ -94,7 +96,8 @@ const useLoginUser = () => {
       setSuccess(data.message)
       setToken(data.token)
     } catch (error) {
-      setError(error.message)
+      const errorMessage = error instanceof Error ? error.message : 'Unexpected error occurred'
+      setError(errorMessage)
     } finally {
       setIsLoading(false)
     }
