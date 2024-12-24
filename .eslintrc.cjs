@@ -14,5 +14,15 @@ module.exports = {
       'warn',
       { allowConstantExport: true },
     ],
+    'quotes': ['error', 'single'],
+    'jsx-quotes': ['error', 'prefer-single'],
+    "semi": ["error", "never"],
+    'react/jsx-uses-react': 'off',
+    'react/react-in-jsx-scope': 'off',
+    'react/prop-types': 'off',
+    'react-hooks/exhaustive-deps': 'off',
+    'space-before-function-paren': ['error', 'always'],
+    'comma-dangle': ['error', 'never'],
+    'eol-last': ['error', 'always']
   },
 }

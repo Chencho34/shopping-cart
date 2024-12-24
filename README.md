@@ -35,4 +35,7 @@ export default {
 * [Redux-Toolkit](https://redux-toolkit.js.org/tutorials/quick-start)
 * [React-Router-Dom](https://reactrouter.com/en/main)
 * [Tailwindcss](https://tailwindcss.com/)
-
+* [Tailwind-Merge](https://www.npmjs.com/package/tailwind-merge)
+* [React-Icons](https://react-icons.github.io/react-icons/)
+* [React-Responsive-Masonry](https://www.npmjs.com/package/react-responsive-masonry)
+* [React-Slick](https://react-slick.neostack.com/)
