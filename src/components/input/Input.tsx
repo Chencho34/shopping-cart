@@ -3,9 +3,9 @@ import { twMerge } from 'tailwind-merge'
 interface InputProps {
   id?: string
   name?: string
-  value?: string
+  value?: string | number | undefined
   placeholder?: string
-  type: 'text' | 'email' | 'password' | 'number'
+  type: 'text' | 'email' | 'password' | 'number' 
   onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void
   className?: string
   readOnly?: boolean | undefined

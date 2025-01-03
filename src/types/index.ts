@@ -1,5 +1,5 @@
 export interface CartProduct {
-  id: number
+  id?: number
   img: string
   title: string
   price: number
@@ -8,15 +8,15 @@ export interface CartProduct {
   description: string
   category?: string
   discount?: number
-  isFavorite: boolean
-  isInCart: boolean
+  isFavorite?: boolean
+  isInCart?: boolean
   dimensions?: {
     width: number
     height: number
     depth: number
   }
   weight?: number
-  availability: boolean
+  availability?: boolean
   tags?: string[]
   additionalImages?: string[]
   specifications?: {
@@ -48,9 +48,12 @@ export interface CartState {
 export interface AuthState {
   isAuthenticated: boolean
   user: {
+    id: number
     name: string
     email: string
     password: string
+    role: string
+    created_at: string
   } | null
   token: string | null
 }

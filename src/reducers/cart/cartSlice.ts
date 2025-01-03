@@ -25,7 +25,7 @@ const cartSlice = createSlice({
       const product = state.productsList.find(product => product.id === action.payload)
       if (product) {
         state.totalCount -= product.quantity
-        state.subTotal -= product.total
+        state.subTotal = Math.max(0, state.subTotal - product.price * product.quantity)
         state.productsList = state.productsList.filter(product => product.id !== action.payload)
         const productToRemove = state.productsList.find(product => product.id === action.payload)
         if (productToRemove) {

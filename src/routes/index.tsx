@@ -1,6 +1,6 @@
 import { createBrowserRouter, createRoutesFromElements, Route } from 'react-router-dom'
-import { Cart, Favorites, Home, Login, Product, SignUp, UserProfile, UserSettings } from '../pages'
-import { AuthLayout, PublicLayout } from '../layout'
+import { AdminDashboard, Cart, CreateNewProduct, Favorites, Home, Login, Product, SignUp, UserProfile, UserSettings } from '../pages'
+import { AdminLayout, AuthLayout, PublicLayout } from '../layout'
 import { ProtectedRoute } from '../components'
 
 export const router = createBrowserRouter(
@@ -17,6 +17,10 @@ export const router = createBrowserRouter(
       <Route path='/logindashboard' element={<AuthLayout />}>
         <Route index element={<Login />}/>
         <Route path='/logindashboard/signUp' element={<SignUp />}/>
+      </Route>
+      <Route path='/admindashboard' element={<AdminLayout />}>
+        <Route index element={<AdminDashboard />} />
+        <Route path='/admindashboard/createProduct' element={<CreateNewProduct />} />
       </Route>
     </>
 ))
