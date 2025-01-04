@@ -1,5 +1,5 @@
 import { createBrowserRouter, createRoutesFromElements, Route } from 'react-router-dom'
-import { AdminDashboard, Cart, CreateNewProduct, Favorites, Home, Login, Product, SignUp, UserProfile, UserSettings } from '../pages'
+import { AdminDashboard, AdminProducts, Cart, CreateNewProduct, Favorites, Home, Login, Product, SignUp, UserProfile, UserSettings } from '../pages'
 import { AdminLayout, AuthLayout, PublicLayout } from '../layout'
 import { ProtectedRoute } from '../components'
 
@@ -21,6 +21,7 @@ export const router = createBrowserRouter(
       <Route path='/admindashboard' element={<AdminLayout />}>
         <Route index element={<AdminDashboard />} />
         <Route path='/admindashboard/createProduct' element={<CreateNewProduct />} />
+        <Route path='/admindashboard/products' element={<AdminProducts />} />
       </Route>
     </>
 ))

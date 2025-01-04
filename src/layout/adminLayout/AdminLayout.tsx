@@ -30,7 +30,7 @@ export default function AdminLayout () {
                   </NavLink>
                 </li>
                 <li>
-                  <NavLink to='/admindashboard'>
+                  <NavLink to='/admindashboard/products'>
                     All products
                   </NavLink>
                 </li>
@@ -51,12 +51,12 @@ export default function AdminLayout () {
                 </NavLink>
               </li>
               <li>
-                <NavLink to='/admindashboard'>
+                <NavLink to='/admindashboard/'>
                   All users
                 </NavLink>
               </li>
               <li>
-                <NavLink to='/admindashboard'>
+                <NavLink to='/admindashboard/products'>
                   All products
                 </NavLink>
               </li>

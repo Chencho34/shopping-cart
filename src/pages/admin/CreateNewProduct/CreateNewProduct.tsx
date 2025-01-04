@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Button, Card, Input, Spinner } from '../../../components'
+import { Button, Input, Spinner } from '../../../components'
 import useProducts from '../../../hooks/useProducts'
 
 export default function CreateNewProduct () {
@@ -11,8 +11,8 @@ export default function CreateNewProduct () {
     description: '',
     price: '',
     quantity: '',
-    total: '',
-    discount: ''
+    discount: '',
+    category: ''
   })
 
   const product = {
@@ -21,7 +21,6 @@ export default function CreateNewProduct () {
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', // Descripción de ejemplo
     price: 100, // Precio en número
     quantity: 1, // Cantidad de productos (número)
-    total: 100, // Total (precio * cantidad)
     discount: 20 // Descuento en porcentaje
   }
 
@@ -46,8 +45,20 @@ export default function CreateNewProduct () {
 
     if (isLoading) return
 
-    await createNewProduct(formProduct)   
+    await createNewProduct(formProduct)
     console.log(formProduct)
+  }
+
+  const resetForm = () => {
+    setFormProduct({
+      title: '',
+      img: '',
+      description: '',
+      price: '',
+      quantity: '',
+      discount: '',
+      category: ''
+    })
   }
 
   return (
@@ -139,18 +150,16 @@ export default function CreateNewProduct () {
               />
             </label>
           </section>
-          { error && <span className='text-red-600'>{error}</span> }
-          { success && <span className='text-emerald-500'>{success}</span> }
+          {error && <span className='text-red-600'>{error}</span>}
+          {success && <span className='text-emerald-500'>{success}</span>}
           <section className='flex gap-4'>
             <Button type='submit' className='px-4 h-9 flex-1'>
               {
                 isLoading ? <Spinner /> : <span>Add Product</span>
               }
             </Button>
-            <Button type='submit' variant='secondary' className='px-4 h-9 flex-1'>
-              {
-                isLoading ? <Spinner /> : <span>Clear Form</span>
-              }
+            <Button onClick={resetForm} type='reset' variant='secondary' className='px-4 h-9 flex-1'>
+               Clear Form
             </Button>
           </section>
         </form>
@@ -159,7 +168,7 @@ export default function CreateNewProduct () {
           <article className='bg-slate-50 rounded-md overflow-hidden shadow-lg w-[300px]'>
             <section className='flex flex-col w-full'>
               <figure className=''>
-                <img className='w-[50%] mx-auto' loading='lazy' src={formProduct.img || product.img} alt={formProduct.title} />
+                <img className='h-full w-full mx-auto' loading='lazy' src={formProduct.img || product.img} alt={formProduct.title} />
               </figure>
               <article className='px-4 py-3 flex flex-col gap-4'>
                 <section>
@@ -170,16 +179,15 @@ export default function CreateNewProduct () {
                     </h6>
                   </span>
                   <p className='text-sm tracking-wide font-semibold text-gray-800 mb-2'>{formProduct.description || product.description}</p>
-                  
                   {
-                  formProduct.discount 
-                  ? <span className=''>
-                      <p className='line-through text-gray-400 text-base'>${formProduct.price}</p>
-                      <p className='text-2xl font-medium text-[#191919]'>${totalWithDiscount(parseInt(formProduct.discount,10), parseInt(formProduct.price, 10))} <span className='text-base text-green-600 font-normal'>{formProduct.discount}% OFF</span></p>
-                    </span> 
-                  : <p className='text-2xl font-medium tex-[#191919]'>${formProduct.price || product.price}</p>
+                    formProduct.discount
+                      ? <span className=''>
+                        <p className='line-through text-gray-400 text-base'>${formProduct.price}</p>
+                        <p className='text-2xl font-medium text-[#191919]'>${totalWithDiscount(parseInt(formProduct.discount, 10), parseInt(formProduct.price, 10))} <span className='text-base text-green-600 font-normal'>{formProduct.discount}% OFF</span></p>
+                      </span>
+                      : <p className='text-2xl font-medium tex-[#191919]'>${formProduct.price || product.price}</p>
                   }
-                </section>                     
+                </section>
               </article>
             </section>
           </article>
