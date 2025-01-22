@@ -16,12 +16,12 @@ export default function CreateNewProduct () {
   })
 
   const product = {
-    title: 'Lorem Ipsum Product', // Título de ejemplo
-    img: 'https://http2.mlstatic.com/D_NQ_NP_971136-CBT81374525137_122024-O.webp', // Imagen de ejemplo (URL genérica)
+    title: 'Lorem Ipsum Product',
+    img: 'https://http2.mlstatic.com/D_NQ_NP_971136-CBT81374525137_122024-O.webp',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', // Descripción de ejemplo
-    price: 100, // Precio en número
-    quantity: 1, // Cantidad de productos (número)
-    discount: 20 // Descuento en porcentaje
+    price: 100,
+    quantity: 1,
+    discount: 20
   }
 
   const totalWithDiscount = (discount: number, price: number) => {
@@ -106,7 +106,7 @@ export default function CreateNewProduct () {
               onClick={handleSelectChange}
               className='form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden text-[#0e161b] focus:outline-0 focus:ring-0 border border-[#d1dde6] bg-[#f8fafb] focus:border-[#d1dde6] h-14 bg-[image:--select-button-svg] placeholder:text-[#507a95] p-2 rounded-full text-base font-normal leading-normal'
             >
-              <option value=''></option>
+              <option value=''>Choose an option</option>
               <option value='electronics'>Electronics</option>
               <option value='audio and video'>Audio and Video</option>
               <option value='gaming'>Gaming</option>

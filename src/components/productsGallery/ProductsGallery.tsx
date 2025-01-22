@@ -9,7 +9,7 @@ export default function ProductsGallery (): JSX.Element {
   const dispatch = useDispatch()
   const { productsList, favoritesList } = useSelector((state: { cart: CartState }) => state.cart)
 
-  const handleAddProductToCartOrRemove = (productId: number) => {
+  const handleAddProductToCartOrRemove = (productId: number | undefined) => {
     const product = productsData.find((product) => product.id === productId)
     if (!product) return 
     
@@ -21,7 +21,7 @@ export default function ProductsGallery (): JSX.Element {
     }
   }
 
-  const handleAddToFavoritesOrRemove = (productId: number) => {
+  const handleAddToFavoritesOrRemove = (productId: number | undefined) => {
     const product = productsData.find((product) => product.id === productId)
     if (!product) {
       // Manejar el caso en el que no se encuentra el producto
@@ -37,8 +37,8 @@ export default function ProductsGallery (): JSX.Element {
     
   }
 
-  const handleisFavorite = (productId: number) => favoritesList.some((fav: CartProduct) => fav.id === productId)
-  const haddleIsInCart = (productId: number) => productsList.some((pro: CartProduct) => pro.id === productId )
+  const handleisFavorite = (productId: number | undefined) => favoritesList.some((fav: CartProduct) => fav.id === productId)
+  const haddleIsInCart = (productId: number | undefined) => productsList.some((pro: CartProduct) => pro.id === productId )
 
   return (
     <Container>

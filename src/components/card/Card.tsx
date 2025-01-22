@@ -4,7 +4,7 @@ import Button from '../button/Button'
 import { Link } from 'react-router-dom'
 
 interface CardProps {
-  id: number
+  id: number | undefined
   img: string
   description: string
   title: string
