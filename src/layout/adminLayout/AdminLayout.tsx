@@ -25,7 +25,7 @@ export default function AdminLayout () {
                   </NavLink>
                 </li>
                 <li>
-                  <NavLink to='/admindashboard'>
+                  <NavLink to='/admindashboard/users'>
                     All users
                   </NavLink>
                 </li>

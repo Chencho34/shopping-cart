@@ -9,6 +9,7 @@ import UserProfile  from './user/user-profile/UserProfile'
 import CreateNewProduct from './admin/CreateNewProduct/CreateNewProduct'
 import AdminDashboard from './admin/adminDashboard/AdminDashboard'
 import AdminProducts from './admin/adminProducts/AdminProducts'
+import AdminUsers from './admin/adminUsers/AdminUsers'
 
 export {
   Cart,
@@ -21,5 +22,6 @@ export {
   UserSettings,
   CreateNewProduct,
   AdminDashboard,
-  AdminProducts
+  AdminProducts,
+  AdminUsers
 }

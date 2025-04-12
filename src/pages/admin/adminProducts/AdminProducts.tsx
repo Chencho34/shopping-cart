@@ -9,74 +9,78 @@ export default function AdminProducts (): JSX.Element {
   const [updateP, setUpdateP] = useState<[]>(products)
   const [itemSearch, setItemSearch] = useState([])
 
-  const testData = [
-    {
-      title: 'Mystic Orb',
-      img: 'orb.png',
-      description: 'A magical orb that glows in the dark.',
-      price: '150',
-      quantity: '50',
-      discount: '10',
-      category: 'magic'
-    },
-    {
-      title: 'Dragon Egg',
-      img: 'dragon_egg.jpg',
-      description: 'A rare dragon egg from the mystical mountains.',
-      price: '500',
-      quantity: '5',
-      discount: '50',
-      category: 'fantasy'
-    },
-    {
-      title: 'Invisibility Cloak',
-      img: 'cloak.png',
-      description: 'A cloak that grants temporary invisibility.',
-      price: '300',
-      quantity: '10',
-      discount: '30',
-      category: 'stealth'
-    },
-    {
-      title: 'Potion of Strength',
-      img: 'potion_strength.jpg',
-      description: 'Increases your strength for an hour.',
-      price: '120',
-      quantity: '100',
-      discount: '15',
-      category: 'alchemy'
-    },
-    {
-      title: 'Phoenix Feather',
-      img: 'phoenix_feather.jpg',
-      description: 'A feather from a legendary phoenix, grants good luck.',
-      price: '200',
-      quantity: '20',
-      discount: '25',
-      category: 'legendary'
-    },
-    {
-      title: 'Time Turner',
-      img: 'time_turner.png',
-      description: 'Allows you to go back in time for a few hours.',
-      price: '800',
-      quantity: '3',
-      discount: '100',
-      category: 'time'
-    }
-  ]
+  // const testData = [
+  //   {
+  //     title: 'Mystic Orb',
+  //     img: 'orb.png',
+  //     description: 'A magical orb that glows in the dark.',
+  //     price: '150',
+  //     quantity: '50',
+  //     discount: '10',
+  //     category: 'magic'
+  //   },
+  //   {
+  //     title: 'Dragon Egg',
+  //     img: 'dragon_egg.jpg',
+  //     description: 'A rare dragon egg from the mystical mountains.',
+  //     price: '500',
+  //     quantity: '5',
+  //     discount: '50',
+  //     category: 'fantasy'
+  //   },
+  //   {
+  //     title: 'Invisibility Cloak',
+  //     img: 'cloak.png',
+  //     description: 'A cloak that grants temporary invisibility.',
+  //     price: '300',
+  //     quantity: '10',
+  //     discount: '30',
+  //     category: 'stealth'
+  //   },
+  //   {
+  //     title: 'Potion of Strength',
+  //     img: 'potion_strength.jpg',
+  //     description: 'Increases your strength for an hour.',
+  //     price: '120',
+  //     quantity: '100',
+  //     discount: '15',
+  //     category: 'alchemy'
+  //   },
+  //   {
+  //     title: 'Phoenix Feather',
+  //     img: 'phoenix_feather.jpg',
+  //     description: 'A feather from a legendary phoenix, grants good luck.',
+  //     price: '200',
+  //     quantity: '20',
+  //     discount: '25',
+  //     category: 'legendary'
+  //   },
+  //   {
+  //     title: 'Time Turner',
+  //     img: 'time_turner.png',
+  //     description: 'Allows you to go back in time for a few hours.',
+  //     price: '800',
+  //     quantity: '3',
+  //     discount: '100',
+  //     category: 'time'
+  //   }
+  // ]
   
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const searchInput = e.target.value.toLowerCase()
     
-    const serachInput = testData.filter((product) => product.title.toLowerCase().includes(e.target.value.toLowerCase()))
-    setItemSearch(serachInput)
-    
+    // Filtrar tanto en testData como en products
+    const filteredProducts = products.filter((product) =>
+      product.title.toLowerCase().includes(searchInput)
+    )
+  
+    setItemSearch(searchInput ? filteredProducts : products) // Mostrar todos si no hay búsqueda
   }
   
-
   useEffect(() => {
     setUpdateP(products)
+    setItemSearch(products)    
   }, [products])
 
   const handleDelete = async (id: number) => {
