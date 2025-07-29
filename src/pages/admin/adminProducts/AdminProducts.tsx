@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Button, Container, Spinner } from '../../../components'
 import useProducts from '../../../hooks/useProducts'
+import { Product } from '../../../types'
 
 export default function AdminProducts (): JSX.Element {
   const { products, isLoading } = useProducts.useProducts()
@@ -71,7 +72,7 @@ export default function AdminProducts (): JSX.Element {
     const searchInput = e.target.value.toLowerCase()
     
     // Filtrar tanto en testData como en products
-    const filteredProducts = products.filter((product) =>
+    const filteredProducts = products.filter((product: Product) =>
       product.title.toLowerCase().includes(searchInput)
     )
   
@@ -84,7 +85,7 @@ export default function AdminProducts (): JSX.Element {
   }, [products])
 
   const handleDelete = async (id: number) => {
-    const updateProducts = updateP.filter((product) => product.id !== id)
+    const updateProducts = updateP.filter((product: Product) => product.id !== id)
     setUpdateP(updateProducts)
     await deleteProduct(id)
   }

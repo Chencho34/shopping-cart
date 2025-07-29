@@ -1,3 +1,5 @@
+import { Product } from '../../types'
+
 const API = import.meta.env.VITE_CART_APP_URL_API
 
 const getProducts = async () => {
@@ -26,7 +28,7 @@ const getProductById = async (id: number) => {
   return data
 }
 
-const createProduct = async (product: object) => {
+const createProduct = async (product: Product) => {
   try {
     const response = await fetch(`${API}/createProduct`, {
       method: 'POST',

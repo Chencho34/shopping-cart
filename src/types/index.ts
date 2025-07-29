@@ -84,3 +84,20 @@ export interface SliderItemsSettings {
   autoplaySpeed: number
   arrows: boolean
 }
+
+export interface Product {
+  id: number
+  title: string
+  description: string
+  price: number
+  quantity: number
+  discount: number
+  category: string
+  img: string
+}
+
+export interface ApiResponse<T> {
+  data: T
+  error?: string | null
+  message?: string | null 
+}
