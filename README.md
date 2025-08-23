@@ -35,11 +35,18 @@ E-commerce platform developed with React and TypeScript, designed to offer a mod
 ## Screenshots
 
 ![Texto alternativo](/public/screenshots/cartapp-hero-01.webp)
-![Texto alternativo](/public/screenshots/cartapp-gallery-02.webp)
 ![Texto alternativo](/public/screenshots/cartapp-footer-03.webp)
 ![Texto alternativo](/public/screenshots/cartapp-cart-04.webp)
 ![Texto alternativo](/public/screenshots/cartapp-favorites-05.webp)
 ![Texto alternativo](/public/screenshots/cartapp-settings-06.webp)
+
+## Login / SignUp
+
+![Texto alternativo](/public/screenshots/cartapp-login-10.webp)
+![Texto alternativo](/public/screenshots/cartapp-signup-11.webp)
+
+## Admin Panel
+
 ![Texto alternativo](/public/screenshots/cartapp-createproduct-07.webp)
 ![Texto alternativo](/public/screenshots/cartapp-adminproducts-08.webp)
 ![Texto alternativo](/public/screenshots/cartapp-adminusers-09.webp)
